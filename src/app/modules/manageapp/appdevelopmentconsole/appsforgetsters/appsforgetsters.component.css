@@ -1,0 +1,69 @@
+.bottom-line {   
+    box-sizing: content-box;
+   width: 90%;
+   float: left;
+   border-top:1px solid grey;
+ }
+
+ .apps-padding{
+   padding: 0px !important;
+ }
+ .apps-heading-style{
+     font-size: 15px;
+    margin-top: 5px; color: #848689;
+    font-weight: 500;
+    font-family: Roboto;
+    padding: 0px !important;
+   }
+   .app-button{
+     margin-left: 10px;
+    background-color: #3366FF;
+    color: #FFFFFF;
+    width: 100%;
+   }
+   .publish-button{
+    margin-left: 10px;
+   background-color: #9A9A9A;
+   color: #FFFFFF;
+   width: 100%;
+  }
+
+  .unpublish-button{
+    margin-left: 10px;
+   background-color: #9A9A9A;
+   color: #FFFFFF;
+   width: 100%;
+  }
+
+.apps-titles-style{
+    font-size: 14px;
+ margin-top: 5px; color: #3366FF;
+ font-weight: 500;
+ font-family: Roboto;
+}
+
+.app-mat-card-size{
+ width: 35px;height: 35px; padding: 5px; cursor: pointer;
+}
+
+.app-mat-card-img-size{
+ width: 35px;height: 35px; padding: 0px;
+}
+
+.app-name-text-style{
+ font-family: Roboto;
+ text-align: center;
+ width: 105px; font-size: 10px;margin-top: 5px;
+ word-break: break-word;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ display: -webkit-box;
+ line-height: 16px; /* fallback */
+ max-height: 32px; /* fallback */
+ -webkit-line-clamp: 3; /* number of lines to show */
+ -webkit-box-orient: vertical;
+}
+
+.app-mat-card-margin-left{
+ /* margin-left: 50px; */
+}

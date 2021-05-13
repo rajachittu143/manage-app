@@ -1,0 +1,67 @@
+<div class="mp-header">
+    <p class="mp-toolbar">
+        <mat-toolbar color="primary" [ngClass]="toggleMenu ? 'angular-material-toolbar' : 'material-toolbar'">
+            <span class="toolbar-text">
+                <p  style="margin-bottom: 0; cursor: pointer;">Home</p>
+            </span>
+            <span class="spacer"></span>
+            <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img" >
+                <img src="../../../../assets/images/my-downloads.svg" class="orders-icon" alt="my orders">
+                <span class="icon-text">My Downloads</span>
+            </div>
+            <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
+                <img src="../../../../assets/images/my-statement.svg" class="orders-icon" alt="my orders">
+                <span class="icon-text">Statements</span>
+            </div>
+            <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
+                <img src="../../../../assets/images/wishlist.svg" class="wishlist-icon" alt="my orders">
+                <span class="icon-text">Wishlist</span>
+            </div>
+            <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
+                <img src="../../../../assets/images/bag.svg" class="bag-icon" alt="my orders">
+                <span class="icon-text">Bag</span>
+            </div>
+            <div fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl (click)="onToggle()">
+                <div *ngIf="toggleMenu == false; else menu">
+                    <button mat-icon-button>
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                </div>
+
+                <ng-template #menu>
+                    <div fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
+                        <img src="../../../../assets/images/my-downloads.svg" class="orders-icon" alt="my orders">
+                        <span class="icon-text">My Downloads</span>
+                    </div>
+                    <div fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
+                        <img src="../../../../assets/images/my-statement.svg" class="orders-icon" alt="my orders">
+                        <span class="icon-text">Statements</span>
+                    </div>
+                    <div fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
+                        <img src="../../../../assets/images/wishlist.svg" class="wishlist-icon" alt="my orders">
+                        <span class="icon-text">Wishlist</span>
+                    </div>
+                    <div fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
+                        <img src="../../../../assets/images/bag.svg" class="bag-icon" alt="my orders">
+                        <span class="icon-text">Bag</span>
+                    </div>
+                </ng-template>
+            </div>
+        </mat-toolbar>
+    </p>
+
+    <!-- <mat-sidenav-container fxFlexFill>
+        <mat-sidenav #sidenav>
+          <mat-nav-list>
+            <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+            <a href="#" mat-list-item>Menu Item 1</a>
+            <a href="#" mat-list-item>Menu Item 2</a>
+            <a href="#" mat-list-item>Menu Item 3</a>
+            <a href="#" mat-list-item>Menu Item 4</a>
+            <a href="#" mat-list-item>Menu Item 5</a>
+            <a href="#"mat-list-item>Menu Item 6</a>
+          </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content fxFlexFill>Main content</mat-sidenav-content>
+      </mat-sidenav-container> -->
+</div>

@@ -1,0 +1,31 @@
+<mat-nav-list>
+
+
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="onSidenavClose()">View profile</button>
+        <button mat-menu-item (click)="onSidenavClose()">Add contact</button>
+    </mat-menu>
+    <div style="width: 100%;">
+        <div style="padding: 10px;">
+            <a routerLink="/">
+                <img style="height: 25px;" src="../../../../../assets/icons/logo.png">
+
+            </a>
+        </div>
+        <div style="margin-top: 20px;">
+            <button mat-button>
+                <span>Catalogue</span>
+                <mat-icon style="margin-left: 3px;">keyboard_arrow_down</mat-icon>
+              </button>
+            
+        </div>
+
+        <div>
+            <button mat-button>
+                <a href="https://dltk.ai/forums/forum/dltk-discourse-forum/" target="_blank">
+                    Help and Support
+                </a>
+            </button>
+        </div>
+    </div>
+</mat-nav-list>

@@ -1,0 +1,103 @@
+.app-development-title {
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #3E3E3E;
+}
+
+.app-development-sub-title {
+    font-size: 12px;
+    font-weight: normal;
+    color: #A9A9A9;
+    margin-top: 10px;
+
+}
+
+
+
+.app-development-btn {
+    background-color: #3366FF;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+.btn-document {
+    background-color: #3366FF;
+    color: #fff;
+}
+
+.img-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.space-right {
+    margin-right: 10;
+}
+
+.flexbox {
+    width: 100%;
+    display: grid;
+    grid-template-columns: calc(50% - 0.5ch) calc(50% - 0.5ch);
+    grid-gap: 1ch;
+}
+
+.flexbox-label {
+    width: 100%;
+    align-items: center;
+    display: grid;
+    grid-template-columns: calc(50% - 0.5ch) calc(50% - 0.5ch);
+   
+}
+
+
+.form-group {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 -1rem 1rem -1rem;
+}
+
+@media (min-width: 576px) {
+    .form-col-3 {
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
+
+    .form-col-4 {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+
+    .form-col-5 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .form-col-6 {
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+
+    .form-col-7 {
+        flex: 0 0 70%;
+        max-width: 70%;
+    }
+
+    .form-col-8 {
+        flex: 0 0 70%;
+        max-width: 70%;
+    }
+
+
+    .offset-form-col-4 {
+        margin-left: 33.33333%;
+    }
+
+}
+
+.highlightedText {
+    background: yellow;
+}

@@ -1,0 +1,33 @@
+.login-screen-height{
+    height: calc(100vh - 187px);
+    overflow-y: auto;
+}
+.apps-titles-description{
+    font-size: 13px;
+    margin-top: 5px; color: #9A9A9A;
+    font-weight: 500;
+    font-family: Roboto;
+   }
+.apps-titles-style{
+ font-size: 14px;
+ margin-top: 5px; color: #3366FF;
+ font-weight: 500;
+ font-family: Roboto;
+}
+
+
+.deny-access-btn {
+    background-color: #9A9A9A;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+.approve-access-btn {
+    background-color: #3366FF;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+  }

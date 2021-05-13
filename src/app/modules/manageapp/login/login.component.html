@@ -1,0 +1,90 @@
+<div fxLayout="row wrap" style="margin-top: 10px;">
+    <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="25%" class="login-screen-height" style="border-right: 2px solid gray;"  fxLayoutAlign="center center">
+        <div fxLayout="column">
+            <div class="secondary-color login-left-side-text-style primary-font-family">Login Restricted to <br>
+               <a style="color: blue; cursor: pointer;"> GETSTERs:</a><br>
+                (EMPLOYEES/DEVELOPERS/<br>
+                CONSULTANTS/ASSOCIATES/<br>
+                SERVICE PROVIDERS/<br>
+                STAKE HOLDERS)
+                of
+            </div>
+            <div style="padding-top: 30px;text-align: center;">
+                <img style="margin-top: 12px;" src="../../../../../assets/icons/getbizapp.png">
+            </div>
+        </div>
+    </div>
+
+    <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="25%">
+        <div>
+            <div fxLayoutAlign="center center" class="primary-font-family" style="margin-top:20px">
+                Face Recognition Login*
+            </div>
+            <div fxLayoutAlign="center center" style="margin-top: 10px;">
+                <img src="../../../../../assets/images/capture.png" alt="" style="height: 240px;width: 240px; cursor: pointer;">
+            </div>
+        </div>
+        <form #f="ngForm" [formGroup]="signinForm" fxLayoutAlign="center center">
+        <!-- <form [formGroup]="signinForm" (ngSubmit)="signin()" style="width: 100%;" fxLayoutAlign="center center"> -->
+            <div style="width: 43%;"  >
+                <div fxLayoutAlign="center center" style="margin-top: 10px;margin-left: 20px;font-size: 18px;">or</div>
+
+                <!-- <mat-form-field appearance="outline" class="form-field-style"
+                    style="margin-top: 10px;margin-left: 10px; width: 100%;">
+                    <mat-label style="padding-left: -5px;">Enter Your Registered Mobile number *:</mat-label>
+                    <mat-icon matPrefix class="icon-prefix-padding">smartphone</mat-icon>
+                    <input matInput type="tel" class="input_style primary-font-family"
+                        placeholder="Enter Your Registered Mobile  number *:" />
+                    
+                </mat-form-field> -->
+
+                <div  class="wrapper" style="margin-top: 10px;">
+                    <ngx-intl-tel-input [cssClass]="'custom'"
+                        [preferredCountries]="preferredCountries"
+                        [enableAutoCountrySelect]="true"
+                        [enablePlaceholder]="true"
+                        [searchCountryFlag]="true"
+                        [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                        [selectFirstCountry]="true"
+                        [selectedCountryISO]="CountryISO.India"
+                        type="number"
+                        maxLength="15"
+                        [phoneValidation]="true"
+                        [separateDialCode]="separateDialCode"
+                        [numberFormat]="PhoneNumberFormat.National"
+                        name="phone"
+                        formControlName="phone">
+                    </ngx-intl-tel-input>
+                </div>
+            
+                    <mat-form-field appearance="outline" class="form-field-style"
+                        style="margin-top: 5px; width: 100%;">
+                        <mat-label>Password</mat-label>
+                        <mat-icon matPrefix class="icon-prefix-padding">lock_outline</mat-icon>
+                        <input type="password" class="input_style primary-font-family" matInput placeholder="Password" value=""
+                            [type]="hide ? 'text' : 'password'" />
+                        <icon style="cursor: pointer;" mat-icon-button matSuffix (click)="hide = !hide">
+                            <mat-icon>{{ hide ? "visibility" : "visibility_off" }}</mat-icon>
+                        </icon>
+                        <!-- <mat-error *ngIf="signinForm.controls['password'].hasError('required') && signinForm.controls['password'].touched">
+                            Password is required!
+                        </mat-error> -->
+                    </mat-form-field>
+                
+                <div style="margin-top: 10px;" fxLayoutAlign="center center">
+                    <button mat-flat-button class="sign-in-btn primary-font-family" [routerLink]="['/manage-app/manageapphome']">LOG IN</button>
+                </div>
+                <div style="margin-top: 10px;" fxLayoutAlign="center center">
+                    <a class="primary-font-family" style="color: #3366FF; cursor: pointer;" href="If you forgot your password, Click here.">If you
+                        forgot your password, Click here.</a>
+                </div>
+                <div class="primary-font-family" style="margin-top: 10px;" fxLayoutAlign="center center">
+                    If you are a new getster, then
+                </div>
+                <div style="margin-top: 10px;" fxLayoutAlign="center center">
+                    <button mat-flat-button class="sign-in-btn primary-font-family" [routerLink]="['/manage-app/register']">REGISTER</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

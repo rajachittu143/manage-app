@@ -1,0 +1,10 @@
+.register-btn{
+    color: #ffffff;
+    background-color: #3366FF;
+}
+
+.form-field-style {
+    margin-bottom: -1.25em !important;
+    font-size: 14px;
+    width: 30%;
+}

@@ -1,0 +1,136 @@
+<div fxLayout="row wrap" style="margin-top: 10px; ">
+    <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="33%" class="login-screen-height"
+        style="border-right: 2px solid gray;padding: 10px;">
+
+        <div class="apps-titles-description">Getsters who have access to APP Development Console are listed below. Any
+            Changes made shall reflect only
+            on approval from the official email id of <a href="Your Biz Name.">Your Biz Name.</a></div>
+
+
+        <div fxLayout="row" style="width: 100%; margin-top: 5px;">
+            <div fxFlex="100" fxFlex.gt-xs="80" fxLayoutAlign="start" class="apps-titles-style">Approved Console Users:
+            </div>
+            <div fxFlex="100" fxFlex.gt-xs="20" fxLayoutAlign="end">
+                <button class="deny-access-btn" mat-stroked-button>
+                    Deny Access
+                </button>
+            </div>
+        </div>
+
+        <div class="mat-elevation-z8" style="margin-top: 10px;">
+            <table mat-table [dataSource]="dataSource">
+
+                <!-- Checkbox Column -->
+                <ng-container matColumnDef="select">
+                    <th mat-header-cell *matHeaderCellDef>
+                        <mat-checkbox (change)="$event ? masterToggle() : null"
+                            [checked]="selection.hasValue() && isAllSelected()"
+                            [indeterminate]="selection.hasValue() && !isAllSelected()">
+                        </mat-checkbox>
+                    </th>
+                    <td mat-cell *matCellDef="let row">
+                        <mat-checkbox (click)="$event.stopPropagation()"
+                            (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+                        </mat-checkbox>
+                    </td>
+                </ng-container>
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="username">
+                    <th mat-header-cell *matHeaderCellDef> User Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="userid">
+                    <th mat-header-cell *matHeaderCellDef> User ID </th>
+                    <td mat-cell *matCellDef="let element"> {{element.userid}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="mobileno">
+                    <th mat-header-cell *matHeaderCellDef> Mobile Number </th>
+                    <td mat-cell *matCellDef="let element"> {{element.mobileno}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+                </tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+
+    </div>
+
+    <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="33%" style="padding: 10px;">
+        <div class="apps-titles-description" style="line-height: 31px;">Getsters without registered mobile numbers /
+            email shall not be listed
+            below.</div>
+
+        <div fxLayout="row" style="width: 100%; margin-top: 5px;">
+            <div fxFlex="100" fxFlex.gt-xs="80" fxLayoutAlign="start" class="apps-titles-style">Users with no acess to
+                console:</div>
+            <div fxFlex="100" fxFlex.gt-xs="20" fxLayoutAlign="end">
+                <button class="approve-access-btn" mat-stroked-button>
+                    Approve Access
+                </button>
+            </div>
+        </div>
+
+        <div class="mat-elevation-z8" style="margin-top: 10px;">
+            <table mat-table [dataSource]="dataSource">
+
+                <!-- Checkbox Column -->
+                <ng-container matColumnDef="select">
+                    <th mat-header-cell *matHeaderCellDef>
+                        <mat-checkbox (change)="$event ? masterToggle() : null"
+                            [checked]="selection.hasValue() && isAllSelected()"
+                            [indeterminate]="selection.hasValue() && !isAllSelected()">
+                        </mat-checkbox>
+                    </th>
+                    <td mat-cell *matCellDef="let row">
+                        <mat-checkbox (click)="$event.stopPropagation()"
+                            (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+                        </mat-checkbox>
+                    </td>
+                </ng-container>
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="username">
+                    <th mat-header-cell *matHeaderCellDef> User Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="userid">
+                    <th mat-header-cell *matHeaderCellDef> User ID </th>
+                    <td mat-cell *matCellDef="let element"> {{element.userid}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="mobileno">
+                    <th mat-header-cell *matHeaderCellDef> Mobile Number </th>
+                    <td mat-cell *matCellDef="let element"> {{element.mobileno}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+                </tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+
+    </div>
+</div>
