@@ -1,67 +1,74 @@
 <div class="mp-header">
-    <p class="mp-toolbar">
-        <mat-toolbar color="primary" [ngClass]="toggleMenu ? 'angular-material-toolbar' : 'material-toolbar'">
-            <span class="toolbar-text">
-                <p  style="margin-bottom: 0; cursor: pointer;">Home</p>
-            </span>
-            <span class="spacer"></span>
-            <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img" >
-                <img src="../../../../assets/images/my-downloads.svg" class="orders-icon" alt="my orders">
-                <span class="icon-text">My Downloads</span>
+    <mat-toolbar color="primary" [ngClass]="toggleMenu ? 'angular-material-toolbar' : 'material-toolbar'">
+        <div>
+            <a routerLink="/">
+                <img style="margin-top: 27px;height: 55px;width: 55px;" src="../../../../../assets/icons/logo.png">
+            </a>
+        </div>
+        <div class="toolbar-text">www.getbiz.app</div>
+        <span class="spacer"></span>
+        <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
+            <img style="margin-left: 10px; width: 20px;height: 20px; cursor: pointer;"
+                src="../../../../../assets/icons/share.png">
+        </div>
+        <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center">
+            <div style="margin-left: 10px; color: #FFFFFF; font-size: 16px;margin-right: 5px; cursor: pointer;">Download
+                Web App</div>
+        </div>
+        <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
+            <img style="width: 20px;height: 20px;cursor: pointer;" src="../../../../../assets/icons/download.png">
+        </div>
+        <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center">
+            <mat-form-field style="color: honeydew;font-size: 14px;">
+                <mat-label style="font-size: 14px;">Select Language</mat-label>
+                <mat-select>
+                    <mat-option value="English">English</mat-option>
+                    <mat-option value="Tamil">Tamil</mat-option>
+                    <mat-option value="Hindi">Hindi</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center">
+            <div [matMenuTriggerFor]="accountMenu">
+                <img src="assets/icons/profile_icon.png"
+                    style="width: 55px;height: 55px; margin-top: 27px;cursor: pointer;" />
             </div>
-            <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
-                <img src="../../../../assets/images/my-statement.svg" class="orders-icon" alt="my orders">
-                <span class="icon-text">Statements</span>
-            </div> 
-            <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
-                <img src="../../../../assets/images/wishlist.svg" class="wishlist-icon" alt="my orders">
-                <span class="icon-text">Wishlist</span>
+            <mat-menu #accountMenu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>settings</mat-icon>
+                    <span>Profile</span>
+                </button>
+
+                <button mat-menu-item>
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span>Sign Out</span>
+                </button>
+            </mat-menu>
+        </div>
+        <div fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl (click)="onToggle()">
+            <div *ngIf="toggleMenu == false; else menu">
+                <button mat-icon-button>
+                    <mat-icon>menu</mat-icon>
+                </button>
             </div>
-            <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
-                <img src="../../../../assets/images/bag.svg" class="bag-icon" alt="my orders">
-                <span class="icon-text">Bag</span>
-            </div>
-            <div fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl (click)="onToggle()">
-                <div *ngIf="toggleMenu == false; else menu">
-                    <button mat-icon-button>
-                        <mat-icon>menu</mat-icon>
-                    </button>
+
+            <ng-template #menu>
+                <div fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl mat-icon-button fxLayout="column"
+                    fxLayoutAlign="center center" class="icon-img">
+                    <img src="../../../../assets/icons/share.png" class="orders-icon" alt="my orders">
+                    <span class="icon-text">Share</span>
                 </div>
-
-                <ng-template #menu>
-                    <div fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
-                        <img src="../../../../assets/images/my-downloads.svg" class="orders-icon" alt="my orders">
-                        <span class="icon-text">My Downloads</span>
-                    </div>
-                    <div fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
-                        <img src="../../../../assets/images/my-statement.svg" class="orders-icon" alt="my orders">
-                        <span class="icon-text">Statements</span>
-                    </div>
-                    <div fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
-                        <img src="../../../../assets/images/wishlist.svg" class="wishlist-icon" alt="my orders">
-                        <span class="icon-text">Wishlist</span>
-                    </div>
-                    <div fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
-                        <img src="../../../../assets/images/bag.svg" class="bag-icon" alt="my orders">
-                        <span class="icon-text">Bag</span>
-                    </div>
-                </ng-template>
-            </div>
-        </mat-toolbar>
-    </p>
-
-    <!-- <mat-sidenav-container fxFlexFill>
-        <mat-sidenav #sidenav>
-          <mat-nav-list>
-            <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
-            <a href="#" mat-list-item>Menu Item 1</a>
-            <a href="#" mat-list-item>Menu Item 2</a>
-            <a href="#" mat-list-item>Menu Item 3</a>
-            <a href="#" mat-list-item>Menu Item 4</a>
-            <a href="#" mat-list-item>Menu Item 5</a>
-            <a href="#"mat-list-item>Menu Item 6</a>
-          </mat-nav-list>
-        </mat-sidenav>
-        <mat-sidenav-content fxFlexFill>Main content</mat-sidenav-content>
-      </mat-sidenav-container> -->
+                <div fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl mat-icon-button fxLayout="column"
+                    fxLayoutAlign="center center" class="icon-img">
+                    <img src="../../../../assets/icons/download.png" class="orders-icon" alt="my orders">
+                    <span class="icon-text">Download Web App</span>
+                </div>
+                <div fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl mat-icon-button fxLayout="column"
+                    fxLayoutAlign="center center" class="icon-img">
+                    <img src="../../../../assets/icons/profile_icon.png" class="bag-icon" alt="my orders">
+                    <span class="icon-text">Profile</span>
+                </div>
+            </ng-template>
+        </div>
+    </mat-toolbar>
 </div>

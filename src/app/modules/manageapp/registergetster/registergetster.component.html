@@ -1,0 +1,57 @@
+<div fxLayout="row wrap" style="margin-top: 10px;">
+    <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="33%" class="login-screen-height" fxLayoutAlign="center center">
+
+        <div style="margin-top: 20px;">
+            <div>
+                <a style="color: blue;">User Registration for GETSTER - Restricted Access</a>
+            </div>
+
+            <form [formGroup]="registerGetsterForm" (ngSubmit)="registerGetster()" style="width: 100%;">
+                <div style="width: 60%;">
+                    <mat-form-field appearance="outline" class="form-field-style"
+                        style="margin-top: 10px; width: 100%;">
+                        <mat-label>First Name</mat-label>
+                        <input type="text" class="input_style" matInput placeholder="First Name" />
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="form-field-style"
+                        style="margin-top: 10px; width: 100%;">
+                        <mat-label>Last Name</mat-label>
+                        <input type="text" class="input_style" matInput placeholder="Last Name" />
+
+                    </mat-form-field>
+
+
+                </div>
+            </form>
+            <div>Select the categories that best describes your relationship with
+                <img style="width: 75px;" src="../../../../../assets/icons/getbizapp.png">
+                <a style="color: red;">*</a>:
+            </div>
+        </div>
+
+    </div>
+
+    <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="33%" fxLayoutAlign="center center">
+        <div style="margin-top: 20px;">
+
+            <div class="secondary-color login-right-side-text-style primary-font-family">
+                <a style="color: blue; cursor: pointer;"> GETSTERs:</a><br>
+                GETSTERs
+                (EMPLOYEES/DEVELOPERS/CONSULTANTS/ASSOCIATES/SERVICE <br> PROVIDERS/STAKE HOLDERS) of
+            </div>
+
+            <div style="padding-top: 10px;text-align: center;">
+                <img src="../../../../../assets/icons/getbizapp.png">
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+<button mat-flat-button class="btn-float-right register-getster-btn"
+    [routerLink]="['/manage-app/register-face']">Next
+</button>

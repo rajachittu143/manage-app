@@ -1,15 +1,26 @@
 <form>
-    <div fxLayout="column" fxLayoutAlign="start" fxLayoutGap="10px grid">
-        <div fxLayout="row wrap" class="apps-padding">
-            <div fxFlex="100" fxFlex.gt-xs="70" class="apps-heading-style">Apps Under Development</div>
-            <div fxFlex="100" fxFlex.gt-xs="30" style="margin-top: 10px;">
-                <div fxLayout="row">
-                    <button class="app-button" mat-stroked-button>EDIT</button>
-                    <button class="app-button" mat-stroked-button>PUBLISH</button>
-                    <button class="app-button" mat-stroked-button>ADD</button>
-                </div>
+    <div fxLayout="column" fxLayoutAlign="start">
+
+        <div fxLayout="row wrap" style="margin-top: 10px;">
+            <div fxFlex="49" fxFlex.xs="100%" fxFlex.sm="25%">Apps Under Development</div>
+
+            <div fxFlex="15" fxFlex.xs="100%" fxFlex.sm="25%">
+                <button class="app-button" mat-stroked-button>EDIT</button>
             </div>
+
+            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+
+
+            <div fxFlex="15" fxFlex.xs="100%" fxFlex.sm="25%">
+                <button class="publish-button" mat-stroked-button>PUBLISH</button>
+            </div>
+            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+            <div fxFlex="15" fxFlex.xs="100%" fxFlex.sm="25%">
+                <button class="app-button" mat-stroked-button>ADD</button>
+            </div>
+            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
         </div>
+        
 
         <div class="apps-titles-style">Admin Apps :</div>
         <div fxLayout="row" class="apps-padding">
@@ -65,15 +76,32 @@
         </div>
     </div>
 
-    <div fxLayout="column" fxLayoutAlign="start" fxLayoutGap="10px grid">
-        <div fxLayout="row wrap" class="apps-padding" style="margin-top: 16px;">
-            <div fxFlex="100" fxFlex.gt-xs="70" class="apps-heading-style">Apps Published for Users</div>
-            <div fxLayout="row" fxFlex="100" fxFlex.gt-xs="30">
+    <div fxLayout="column" fxLayoutAlign="start">
+
+        
+        <div fxLayout="row wrap" style="margin-top: 10px;">
+            <div fxFlex="49" fxFlex.xs="100%" fxFlex.sm="25%">Apps Published for Users</div>
+
+            <div fxFlex="15" fxFlex.xs="100%" fxFlex.sm="25%">
                 <button class="app-button" mat-stroked-button>SORT BY</button>
-                <button class="app-button" mat-stroked-button>EDIT</button>
-                <button class="app-button" mat-stroked-button>UNPUBLISH</button>
             </div>
+
+            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+
+            <div fxFlex="15" fxFlex.xs="100%" fxFlex.sm="25%">
+                <button class="app-button" mat-stroked-button>EDIT</button>
+            </div>
+
+            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+
+
+            <div fxFlex="15" fxFlex.xs="100%" fxFlex.sm="25%">
+                <button class="publish-button" mat-stroked-button>UNPUBLISH</button>
+            </div>
+
+            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
         </div>
+
         <div class="apps-titles-style">Human Resources (HR) Apps :</div>
 
         <div fxLayout="row" class="apps-padding">

@@ -1,0 +1,49 @@
+<form [formGroup]="getsterAccessControlForm" (ngSubmit)="onSubmit($event)">
+    <div style="margin-top: 10px;">
+        <div fxLayout="row wrap">
+            <div fxFlex="100" fxFlex.gt-xs="17" style="width: 100%;">
+                <div style="padding:10px">
+                    <button class="app-development-btn" mat-stroked-button type="submit" name="NewGetster"
+                        [ngStyle]="{'background': getColor('NewGetster')}">
+                        New Getster
+                    </button>
+                </div>
+            </div>
+
+            <div fxFlex="100" fxFlex.gt-xs="17" style="width: 100%;">
+                <div style="padding:10px">
+                    <button class="app-development-btn" mat-stroked-button type="submit" name="ExistingGetster"
+                        [ngStyle]="{'background': getColor('ExistingGetster')}">
+                        Existing Getster
+                    </button>
+                </div>
+            </div>
+
+            <div fxFlex="100" fxFlex.gt-xs="17" style="width: 100%;">
+                <div style="padding:10px">
+                    <button class="app-development-btn" mat-stroked-button type="submit" name="BlockedGetster"
+                        [ngStyle]="{'background': getColor('BlockedGetster')}">
+                        Blocked Getster
+                    </button>
+                </div>
+            </div>
+
+            <div fxFlex="100" fxFlex.gt-xs="17" style="width: 100%;">
+                <div style="padding:10px">
+                    <button class="app-development-btn" mat-stroked-button type="submit" name="GetsterProfile"
+                        [ngStyle]="{'background': getColor('GetsterProfile')}">
+                        Getster Profile / Login Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: -10px;">
+            <app-new-getster style="width: 100%;" *ngIf="tabName == 'NewGetster'"></app-new-getster>
+            <app-existing-getster style="width: 100%" *ngIf="tabName == 'ExistingGetster'"></app-existing-getster>
+            <app-blocked-getster style="width: 100%" *ngIf="tabName == 'BlockedGetster'"></app-blocked-getster>
+            <app-getster-profile style="width: 100%" *ngIf="tabName == 'GetsterProfile'"></app-getster-profile>
+        </div>
+
+    </div>
+</form>

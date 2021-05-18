@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-registerface',
+  templateUrl: './registerface.component.html',
+  styleUrls: ['./registerface.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterfaceComponent implements OnInit {
 
   registrationForm: FormGroup = new FormGroup({});
   errorMsg = '';
@@ -24,4 +24,5 @@ export class RegisterComponent implements OnInit {
 
   register() {
   }
+
 }

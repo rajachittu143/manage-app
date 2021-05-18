@@ -16,7 +16,7 @@
     background-color:#9A9A9A
 }
 .primary-font-family{
-    font-family: "Roboto";
+    font-family: Roboto;
 }
 
 
@@ -38,7 +38,8 @@
 
 /* You can add global styles to this file, and also import other style files */
 body {
-	font-family: Roboto, Helvetica, Arial, sans-serif;
+	font-family: Roboto;
+	/* font-family: Roboto, Helvetica, Arial, sans-serif; */
 }
 
 .wrapper {
@@ -104,7 +105,7 @@ ngx-intl-tel-input input {
 
 ngx-intl-tel-input.ng-invalid.ng-touched input {
 	border: 1px solid #c0392b;
-    /* width: 100%; */
+    width: 100%;
 }
 
 ngx-intl-tel-input input:hover {

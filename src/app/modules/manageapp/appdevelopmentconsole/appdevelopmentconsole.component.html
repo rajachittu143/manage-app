@@ -2,7 +2,7 @@
     <div>
         <div fxLayout="row" style="width: 100%; margin-top: 5px;">
             <div fxFlex="100" fxFlex.gt-xs="50"  fxLayoutAlign="start" class="app-development-title">
-               <a href="Under Video/Activity Surveillance"> Under Video/Activity Surveillance</a>
+               <a href="" style="margin-left: 65px;"> User Activity in this app is recorded under Audit Trail to track misuse. </a>
             </div>
         </div>
         <div fxLayout="row wrap">
@@ -41,6 +41,15 @@
                     </button>
                 </div>
             </div>
+
+            <div fxFlex="100" fxFlex.gt-xs="17" style="width: 100%;">
+                <div style="padding:10px">
+                    <button class="app-development-btn" mat-stroked-button type="submit" name="AuditTrail"
+                        [ngStyle]="{'background': getColor('AuditTrail')}">
+                        Audit Trail
+                    </button>
+                </div>
+            </div>
         </div>
 
         <div style="margin-top: -10px;">
@@ -50,6 +59,7 @@
             <app-launchscreenimages style="width: 100%" *ngIf="tabName == 'LaunchScreenimages'">
             </app-launchscreenimages>
             <app-consoleuser style="width: 100%" *ngIf="tabName == 'ConsoleUser'"></app-consoleuser>
+            <app-audit-trail style="width: 100%" *ngIf="tabName == 'AuditTrail'"></app-audit-trail>
         </div>
 
     </div>

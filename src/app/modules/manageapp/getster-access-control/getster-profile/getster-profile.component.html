@@ -1,0 +1,298 @@
+<form #f="ngForm" [formGroup]="userProfileForm">
+
+    <div fxLayout="row wrap" style="margin-top: 10px;">
+        <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="25%" class="getster-profile-screen-height">
+            <div class="primary-color profile-heading">EXISTING GETSTER PROFILES:</div>
+            <div class="mat-elevation-z8" style="margin: 24px;">
+                <table mat-table [dataSource]="dataSource">
+                    <!-- Checkbox Column -->
+                    <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <mat-checkbox (change)="$event ? masterToggle() : null"
+                                [checked]="selection.hasValue() && isAllSelected()"
+                                [indeterminate]="selection.hasValue() && !isAllSelected()">
+                            </mat-checkbox>
+                        </th>
+                        <td mat-cell *matCellDef="let row">
+                            <mat-checkbox (click)="$event.stopPropagation()"
+                                (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+                            </mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="username">
+                        <th mat-header-cell *matHeaderCellDef>Name</th>
+                        <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="userid">
+                        <th mat-header-cell *matHeaderCellDef>User ID</th>
+                        <td mat-cell *matCellDef="let element"> {{element.userid}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="getster_category">
+                        <th mat-header-cell *matHeaderCellDef>GETSTER CATEGORIES</th>
+                        <td mat-cell *matCellDef="let element"> {{element.getster_category}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+                    </tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+
+            <div style="border-bottom: 1px solid gray; margin-top: 10px; margin-left: 10px;margin-right: 10px;"></div>
+            <!-- Getster Info -->
+            <div class="normal-text" style="margin-left: 24px; margin-top: 10px;" fxLayoutAlign="start start">user id: 2012051</div>
+       
+            <div fxLayout="row wrap" style="margin-top: 10px; width: 100%; margin-left: 7px;">
+                <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+                <div fxFlex="46" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                    <table>
+                        <tr class="pth">
+                            <td class="ptd">Registered By</td>
+                            <td class="ptd"><a style="cursor: pointer;" href="" class="primary-color">Antony S</a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div fxFlex="1" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+                <div fxFlex="47" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                    <table>
+                        <tr class="pth">
+                            <td class="ptd">Category</td>
+                            <td class="ptd"><a style="cursor: pointer;" href="" class="primary-color">Employee/Unit 1/HR
+                                    Head</a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+            </div>
+
+            <div fxLayout="row wrap" style="margin-top: 10px; width: 100%; margin-left: 7px;">
+                <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+                <div fxFlex="46" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                    <table>
+                        <tr class="pth">
+                            <td class="ptd">Registered Date</td>
+                            <td class="ptd">10th October 2020</td>
+                        </tr>
+                    </table>
+                </div>
+                <div fxFlex="1" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+                <div fxFlex="47" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+
+                </div>
+                <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+            </div>
+            <!--  -->
+            <div class="primary-color profile-heading" style="margin-top: 10px;" fxLayoutAlign="center center">CHANGES
+                MADE
+                TO USER PROFILE ARE HIGHLIGHTED IN YELLOW</div>
+
+            <div fxLayout="row wrap" style="margin-top: 10px;">
+                <div fxFlex="65" fxFlex.xs="100%" fxFlex.sm="25%">
+                    <div class="profile-heading">GETSTER PROFILE
+                    </div>
+                </div>
+                <div fxFlex="15" fxFlex.xs="100%" fxFlex.sm="25%" fxLayoutAlign="end end">
+                    <button style="margin-left: 10px;" mat-flat-button class="approve-btn">EDIT
+                    </button>
+                </div>
+                <div fxFlex="15" fxFlex.xs="100%" fxFlex.sm="25%" fxLayoutAlign="end end">
+                    <button style="margin-left: 10px;" mat-flat-button class="approve-btn">SAVE
+                    </button>
+                </div>
+                <div fxFlex="5" fxFlex.xs="100%" fxFlex.sm="25%" fxLayoutAlign="end end"></div>
+            </div>
+
+            <div>
+                <mat-form-field appearance="outline" class="form-field-style"
+                    style="margin-top: 10px;margin-left: 24px; width: 50%;">
+                    <mat-label style="padding-left: -5px;">First Name</mat-label>
+                    <mat-icon matPrefix class="icon-prefix-padding">user</mat-icon>
+                    <input matInput type="tel" class="input_style primary-font-family" placeholder="First Name" />
+
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="form-field-style"
+                    style="margin-top: 10px;margin-left: 24px; width: 50%;">
+                    <mat-label style="padding-left: -5px;">Last Name</mat-label>
+                    <mat-icon matPrefix class="icon-prefix-padding">user</mat-icon>
+                    <input matInput type="tel" class="input_style primary-font-family" placeholder="Last Name" />
+
+                </mat-form-field>
+            </div>
+            <div style="margin-left: 24px; font-size: 12px;">
+                Select the categories that best describes the user relationship with Your Biz Name*:
+            </div>
+
+            <div style="border-bottom: 1px solid gray; margin-top: 10px; margin-left: 10px;margin-right: 10px;"></div>
+
+            <!-- Change Mobile Number -->
+
+            <div fxLayout="row wrap" style="margin-top: 10px;">
+                <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="25%">
+                    <div class=" profile-heading">Registered Mobile number*:
+                    </div>
+                </div>
+                <div fxFlex="45" fxFlex.xs="100%" fxFlex.sm="25%" fxLayoutAlign="end end">
+                    <button mat-flat-button class="approve-btn">Change
+                    </button>
+                </div>
+                <div fxFlex="5" fxFlex.xs="100%" fxFlex.sm="25%" fxLayoutAlign="end end"></div>
+            </div>
+
+            <div class="wrapper" style="margin-top: 10px; width: 50%; margin-left: 24px;">
+                <ngx-intl-tel-input [cssClass]="'custom'" [preferredCountries]="preferredCountries"
+                    [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true"
+                    [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                    [selectFirstCountry]="true" [selectedCountryISO]="CountryISO.India" type="number" maxLength="15"
+                    [phoneValidation]="true" [separateDialCode]="separateDialCode"
+                    [numberFormat]="PhoneNumberFormat.National" name="phone" formControlName="phone">
+                </ngx-intl-tel-input>
+            </div>
+
+            <div style="margin-top: 10px; width: 50%; margin-left: 24px;">
+                <mat-form-field appearance="outline" style="width: 100%; color: honeydew;margin-top: 10px;"
+                    class="form-field-style primary-font-family">
+                    <mat-label style="font-size: 14px;">VERIFY VIA</mat-label>
+                    <mat-select>
+                        <mat-option value="Whatsapp">Whatsapp</mat-option>
+                        <mat-option value="Telegram">Telegram</mat-option>
+                        <mat-option value="Facebook messenger">Facebook messenger</mat-option>
+                        <mat-option value="Wechat">Wechat</mat-option>
+                        <mat-option value="Viber">Viber</mat-option>
+                        <mat-option value="Slack">Slack</mat-option>
+                        <mat-option value="SMS">SMS</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div style="margin-left: 24px; font-size: 12px;">A Link will be sent to new mobile number for face recognition.</div>
+
+            <div style="border-bottom: 1px solid gray; margin-top: 10px; margin-left: 10px;margin-right: 10px;"></div>
+            <!--  Face Recognition Image -->
+
+            <div fxLayout="row wrap" style="margin-top: 10px;">
+                <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="25%">
+                    <div class=" profile-heading">Face Recognition Image* :
+                    </div>
+                </div>
+                <div fxFlex="45" fxFlex.xs="100%" fxFlex.sm="25%" fxLayoutAlign="end end">
+                    <img src="../../../../../assets/icons/profile_icon.png" alt=""
+                    style="height: 240px;width: 240px; cursor: pointer;">
+                </div>
+                <div fxFlex="5" fxFlex.xs="100%" fxFlex.sm="25%" fxLayoutAlign="end end"></div>
+            </div>
+            <div style="border-bottom: 1px solid gray; margin-top: 10px; margin-left: 10px;margin-right: 10px;"></div>
+           
+            <!-- Additional Data -->
+            <div class="profile-heading" style="margin-top: 10px;">Additional Data:</div>
+            <div style="margin-left: 24px; margin-top: 10px; margin-bottom: 20px;">
+                <div fxLayout="row wrap" style="margin-top: 10px; width: 100%;">
+                    <div fxFlex="25" fxFlex.xs="100%" fxFlex.sm="25%" class="bold-value">Company Name:</div>
+                    <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                        <table>
+                            <tr class="pth">
+                                <td class="additional-data-ptd">XYZ</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div fxFlex="25" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                    </div>
+                </div>
+                <div fxLayout="row wrap" style="margin-top: 10px; width: 100%;">
+                    <div fxFlex="25" fxFlex.xs="100%" fxFlex.sm="25%" class="bold-value">Designation:</div>
+                    <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                        <table>
+                            <tr class="pth">
+                                <td class="additional-data-ptd">HR</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div fxFlex="25" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                    </div>
+                </div>
+                <div fxLayout="row wrap" style="margin-top: 10px; width: 100%;">
+                    <div fxFlex="25" fxFlex.xs="100%" fxFlex.sm="25%" class="bold-value">Email Id:</div>
+                    <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                        <table>
+                            <tr class="pth">
+                                <td class="additional-data-ptd">XYZ@gmail.com</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div fxFlex="25" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+            <div class="profile-heading">About The User:</div>
+            <div>
+                <mat-form-field appearance="outline" class="form-field-style"
+                style="margin-top: 10px;margin-left: 24px; width: 80%;">
+                <!-- <mat-label style="padding-left: -5px;">Last Name</mat-label> -->
+                <mat-icon matPrefix class="icon-prefix-padding">user</mat-icon>
+                <textarea matInput ></textarea>
+
+            </mat-form-field>
+            </div>
+        </div>
+        <!-- Right Side -->
+        <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="25%">
+            <div fxLayout="row wrap" style="margin-top: -20px;">
+                <div fxFlex="80" fxFlex.xs="100%" fxFlex.sm="25%">
+                    <div class="primary-color profile-heading" style="margin-top: 20px;">GETSTER PROFILE CHANGES
+                        THAT ARE PENDING FOR APPROVAL:
+                    </div>
+                </div>
+                <div fxFlex="20" fxFlex.xs="100%" fxFlex.sm="25%" fxLayoutAlign="end end">
+                    <button style="margin-left: 10px;" mat-flat-button class="approve-btn">APPROVE
+                    </button>
+                </div>
+            </div>
+
+            <div class="mat-elevation-z8" style="margin: 24px;">
+                <table mat-table [dataSource]="dataSource">
+                    <!-- Checkbox Column -->
+                    <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <mat-checkbox (change)="$event ? masterToggle() : null"
+                                [checked]="selection.hasValue() && isAllSelected()"
+                                [indeterminate]="selection.hasValue() && !isAllSelected()">
+                            </mat-checkbox>
+                        </th>
+                        <td mat-cell *matCellDef="let row">
+                            <mat-checkbox (click)="$event.stopPropagation()"
+                                (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+                            </mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="username">
+                        <th mat-header-cell *matHeaderCellDef>Name</th>
+                        <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="userid">
+                        <th mat-header-cell *matHeaderCellDef>User ID</th>
+                        <td mat-cell *matCellDef="let element"> {{element.userid}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="getster_category">
+                        <th mat-header-cell *matHeaderCellDef>GETSTER CATEGORIES</th>
+                        <td mat-cell *matCellDef="let element"> {{element.getster_category}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+                    </tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,3 +1,4 @@
+@import "../../../../styles.css";
  .top-header {
     height: 44px;
   }
@@ -11,21 +12,21 @@
   }
   
   .material-toolbar {
-    height: 44px !important;
-    background-color: #3e3e3e !important;
+    height: 37px !important;
+    background-color: #3366FF !important;
     border-radius: 4px !important;
-    padding: 0 45px !important;
+    padding: 0 10px !important;
   }
   
   .toolbar-text {
-    font-family: "Roboto";
+    font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 21px;
     letter-spacing: 0.04em;
     color: #ffffff;
-    opacity: 0.8;
+    /* opacity: 0.8; */
   }
   
   .spacer {
@@ -63,19 +64,19 @@
   
   @media only screen and (min-width: 600px) {
       .material-toolbar {
-          height: 55px !important;
-          background-color: #3e3e3e !important;
+          height: 37px !important;
+          background-color: #3366FF !important;
           border-radius: 4px !important;
-          padding: 0 45px !important;
+          padding: 0 10px !important;
         }
   }
   
   @media only screen and (max-width: 599px) {
     .angular-material-toolbar {
       height: 185px !important;
-      background-color: #3e3e3e !important;
+      background-color: #3366FF !important;
       border-radius: 4px !important;
-      padding: 0 45px !important;
+      padding: 0 10px !important;
     }
   
     .icon-img {

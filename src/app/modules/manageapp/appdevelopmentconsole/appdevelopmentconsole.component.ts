@@ -14,19 +14,20 @@ export class AppdevelopmentconsoleComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  
+
   }
 
-  onSubmit(event:any) {
+  onSubmit(event: any) {
     if (event.submitter.name == "AppForUser") {
       this.tabName = "AppForUser";
-    }
-    else if (event.submitter.name == "AppForGetsters") {
+    } else if (event.submitter.name == "AppForGetsters") {
       this.tabName = "AppForGetsters";
     } else if (event.submitter.name == "LaunchScreenimages") {
       this.tabName = "LaunchScreenimages";
-    } else if(event.submitter.name == "ConsoleUser"){
+    } else if (event.submitter.name == "ConsoleUser") {
       this.tabName = "ConsoleUser";
+    } else if (event.submitter.name == "AuditTrail"){
+      this.tabName = "AuditTrail";
     }
 
     // this.appDevelopmentConsoleForm = new FormGroup({
@@ -37,7 +38,7 @@ export class AppdevelopmentconsoleComponent implements OnInit {
   public getColor(status: string): string {
     if (this.tabName == status) {
       return "#9A9A9A"
-    }else {
+    } else {
       return "#3366FF"
     }
     // return status != "FAIL" ? "green" : "red";

@@ -1,0 +1,183 @@
+<div fxLayout="row wrap" style="margin-top: 10px;">
+    <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="25%" class="getster-category-screen-height">
+        <div class="mat-elevation-z8" style="margin: 24px;">
+            <table mat-table [dataSource]="dataSource">
+                <!-- Checkbox Column -->
+                <ng-container matColumnDef="select">
+                    <th mat-header-cell *matHeaderCellDef>
+                        <mat-checkbox (change)="$event ? masterToggle() : null"
+                            [checked]="selection.hasValue() && isAllSelected()"
+                            [indeterminate]="selection.hasValue() && !isAllSelected()">
+                        </mat-checkbox>
+                    </th>
+                    <td mat-cell *matCellDef="let row">
+                        <mat-checkbox (click)="$event.stopPropagation()"
+                            (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+                        </mat-checkbox>
+                    </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="username">
+                    <th mat-header-cell *matHeaderCellDef>Name</th>
+                    <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="userid">
+                    <th mat-header-cell *matHeaderCellDef>User ID</th>
+                    <td mat-cell *matCellDef="let element"> {{element.userid}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="getster_category">
+                    <th mat-header-cell *matHeaderCellDef>GETSTER CATEGORIES</th>
+                    <td mat-cell *matCellDef="let element"> {{element.getster_category}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+                </tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+    </div>
+
+    <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="25%">
+
+        <div class="normal-text" style="margin-right: 30px;" fxLayoutAlign="end end">user id: 2012051</div>
+        <div fxLayout="row wrap" style="margin-top: 10px; width: 100%;">
+            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+            <div fxFlex="46" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                <table>
+                    <tr class="pth">
+                        <td class="ptd">First Name</td>
+                        <td class="ptd"><a style="cursor: pointer;" href="" class="primary-color">Ram</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div fxFlex="1" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+            <div fxFlex="47" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                <table>
+                    <tr class="pth">
+                        <td class="ptd">Last Name</td>
+                        <td class="ptd"><a style="cursor: pointer;" href="" class="primary-color">Sundar</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+        </div>
+
+        <div fxLayout="row wrap" style="margin-top: 10px; width: 100%;">
+            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+            <div fxFlex="46" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                <table>
+                    <tr class="pth">
+                        <td class="ptd">Reg Mobile No</td>
+                        <td class="ptd">+91 8883810833</td>
+                    </tr>
+                </table>
+            </div>
+            <div fxFlex="1" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+            <div fxFlex="47" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+
+            </div>
+            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <img style="height: 80px; width: 80px;" src="assets/icons/u1.png" alt="">
+        </div>
+
+        <div style="margin-left: 20px;">
+
+            <div class="bold-value">Additional Data:</div>
+            <div fxLayout="row wrap" style="margin-top: 10px; width: 100%;">
+                <div fxFlex="25" fxFlex.xs="100%" fxFlex.sm="25%" class="bold-value">Company Name:</div>
+                <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                    <table>
+                        <tr class="pth">
+                            <td class="additional-data-ptd">XYZ</td>
+                        </tr>
+                    </table>
+                </div>
+                <div fxFlex="25" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                </div>
+            </div>
+            <div fxLayout="row wrap" style="margin-top: 10px; width: 100%;">
+                <div fxFlex="25" fxFlex.xs="100%" fxFlex.sm="25%" class="bold-value">Designation:</div>
+                <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                    <table>
+                        <tr class="pth">
+                            <td class="additional-data-ptd">HR</td>
+                        </tr>
+                    </table>
+                </div>
+                <div fxFlex="25" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                </div>
+            </div>
+            <div fxLayout="row wrap" style="margin-top: 10px; width: 100%;">
+                <div fxFlex="25" fxFlex.xs="100%" fxFlex.sm="25%" class="bold-value">Email Id:</div>
+                <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                    <table>
+                        <tr class="pth">
+                            <td class="additional-data-ptd">XYZ@gmail.com</td>
+                        </tr>
+                    </table>
+                </div>
+                <div fxFlex="25" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+
+        <div style="border-bottom: 1px solid gray; margin-top: 10px; margin-left: 10px;margin-right: 10px;"></div>
+
+        <div fxLayout="row wrap" style="margin-top: 10px; width: 100%;">
+            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+            <div fxFlex="46" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                <table>
+                    <tr class="pth">
+                        <td class="ptd">Registered By</td>
+                        <td class="ptd"><a style="cursor: pointer;" href="" class="primary-color">Antony S</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div fxFlex="1" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+            <div fxFlex="47" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                <table>
+                    <tr class="pth">
+                        <td class="ptd">Category</td>
+                        <td class="ptd"><a style="cursor: pointer;" href="" class="primary-color">Employee/Unit 1/HR
+                                Head</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+        </div>
+
+        <div fxLayout="row wrap" style="margin-top: 10px; width: 100%;">
+            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+            <div fxFlex="46" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+                <table>
+                    <tr class="pth">
+                        <td class="ptd">Registered Date</td>
+                        <td class="ptd">10th October 2020</td>
+                    </tr>
+                </table>
+            </div>
+            <div fxFlex="1" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+            <div fxFlex="47" fxFlex.xs="100%" fxFlex.sm="25%" style="width: 100%;">
+
+            </div>
+            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+        </div>
+    </div>
+</div>
+
+<div class="btn-float-right">
+    <button mat-flat-button class="new-getster-btn" [routerLink]="['/manage-app/register-face']">Delete
+    </button>
+
+
+    <button style="margin-left: 10px;" mat-flat-button class="new-getster-btn" [routerLink]="['/manage-app/register-face']">Block
+    </button>
+
+</div>

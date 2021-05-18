@@ -1,6 +1,6 @@
 .login-screen-height{
-    height: calc(100vh - 187px);
-    overflow-y: auto;
+    /* height: calc(100vh - 187px);
+    overflow-y: auto; */
 }
 .apps-titles-description{
     font-size: 13px;
@@ -28,6 +28,46 @@
     width: 100%;
 }
 
+.normal-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: #9C9A9A;
+}
+
+.pth{
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+
+  .ptd  {
+      width: 50%;
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 2px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: #9C9A9A;
+  }
+
 table {
     width: 100%;
   }
+
+  .mat-header-cell {
+    color: #3366FF !important;
+    font-size: 14px;
+    font-weight: 700px;
+}
+
+.mat-row:nth-child(even){
+    background-color: #e4f0ec;
+}
+
+.mat-row:nth-child(odd){
+    background-color:#ffffff;
+}

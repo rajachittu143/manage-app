@@ -16,17 +16,24 @@
     padding: 0px !important;
    }
    .app-button{
-     margin-left: 10px;
-    background-color: #3366FF;
-    color: #FFFFFF;
-    width: 100%;
-   }
-   .publish-button{
-    margin-left: 10px;
-   background-color: #9A9A9A;
+    border-radius:20px;
+   background-color: #3366FF;
    color: #FFFFFF;
    width: 100%;
   }
+  .publish-button{
+   border-radius:20px;
+  background-color: #9A9A9A;
+  color: #FFFFFF;
+  width: 100%;
+ }
+
+ .unpublish-button{
+  border-radius:20px;
+  background-color: #9A9A9A;
+  color: #FFFFFF;
+  width: 100%;
+ }
 .apps-titles-style{
     font-size: 14px;
  margin-top: 5px; color: #3366FF;

@@ -1,0 +1,22 @@
+@import "../../../../styles.css";
+
+.getster-category-screen-height{
+    height: calc(100vh - 187px);
+    overflow-y: auto;
+    border-right: 2px solid gray;
+}
+table {
+    width: 100%;
+  }
+
+  th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    padding: 10px !important;
+}
+
+.mat-row:nth-child(even){
+    background-color: #e4f0ec;
+}
+
+.mat-row:nth-child(odd){
+    background-color:#ffffff;
+}

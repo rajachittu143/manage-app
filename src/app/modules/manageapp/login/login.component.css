@@ -13,7 +13,7 @@
 }
 
 .login-right-side-title{
-
+    width: 43%;
 }
 
 .input_style {
@@ -29,28 +29,21 @@
     background-color: #3366FF;
 }
 
-@media only screen and (max-width: 959px) and (min-width: 600px) {
+
+
+@media only screen and (min-width: 600px) {
     
-    .login-screen-height {
-        height: calc(100vh - 442px);
-        overflow-y: auto;
-        border-right: none;
-      }
 }
 
-@media only screen and (max-width: 1010px) and (min-width: 960px) {
-    .login-screen-height {
-        height: calc(100vh - 442px);
-        overflow-y: auto;
-        /* border-right: none; */
-      }
-}
-
-@media only screen and (max-width: 1010px) and (min-width: 600px) {
+@media only screen and (max-width: 599px) {
     .login-screen-height{
         height: calc(100vh - 442px);
         overflow-y: auto;
-        /* border-right: none; */
+        border-right: 0px solid white;
       }
-}
 
+      .login-right-side-title{
+        width: 100%;
+        margin-right: 10px;
+    }
+}
