@@ -5,7 +5,7 @@
 <form [formGroup]="registrationForm" fxLayoutAlign="center center" (ngSubmit)="register()">
 
     <div fxLayout="row wrap" style="margin-top: 10px; width: 100%;" fxLayoutAlign="center center">
-        <div style="margin-top: 10px; width: 30%;">
+        <div style="margin-top: 10px; width: 45%;">
             <div fxLayoutAlign="center center" class="primary-font-family">
                 Face Recognition Login*
             </div>
@@ -15,17 +15,26 @@
 
             <div fxLayout="row wrap" style="margin-top: 10px;">
                 <div fxFlex="49" fxFlex.xs="100%" fxFlex.sm="25%" fxLayoutAlign="center center">
-                    <mat-form-field appearance="outline" style="margin-top: 10px;" class="form-field-style primary-font-family"
-                    style="margin-top: 10px;margin-left: 10px; width: 100%;">
-                    <mat-label style="padding-left: -5px;">Enter Your Registered Mobile number *:</mat-label>
-                    <mat-icon matPrefix class="icon-prefix-padding">smartphone</mat-icon>
-                    <input matInput type="tel" class="input_style" placeholder="Enter Your Registered Mobile  number *:" />
-                </mat-form-field>
+                    <ngx-intl-tel-input style="margin-top: 22px;" [cssClass]="'custom'" [preferredCountries]="preferredCountries"
+                        [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true"
+                        [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.All]"
+                        [selectFirstCountry]="true" [selectedCountryISO]="CountryISO.India" type="number" maxLength="15"
+                        [phoneValidation]="true" [separateDialCode]="separateDialCode"
+                        [numberFormat]="PhoneNumberFormat.National" name="phone" formControlName="phone">
+                    </ngx-intl-tel-input>
+                    <!-- <mat-form-field appearance="outline" style="margin-top: 10px;"
+                        class="form-field-style primary-font-family"
+                        style="margin-top: 10px;margin-left: 10px; width: 100%;">
+                        <mat-label style="padding-left: -5px;">Enter Your Registered Mobile number *:</mat-label>
+                        <mat-icon matPrefix class="icon-prefix-padding">smartphone</mat-icon>
+                        <input matInput type="tel" class="input_style"
+                            placeholder="Enter Your Registered Mobile  number *:" />
+                    </mat-form-field> -->
                 </div>
                 <div fxFlex="2"></div>
-                <div fxFlex="49" fxFlex.xs="100%" fxFlex.sm="25%" fxLayoutAlign="center center" >
-                    <mat-form-field appearance="outline" style="width: 100%; color: honeydew;margin-top: 10px;" 
-                    class="form-field-style primary-font-family">
+                <div fxFlex="49" fxFlex.xs="100%" fxFlex.sm="25%" fxLayoutAlign="center center">
+                    <mat-form-field appearance="outline" style="width: 100%; color: honeydew;margin-top: 10px;"
+                        class="form-field-style primary-font-family">
                         <mat-label style="font-size: 14px;">VERIFY VIA</mat-label>
                         <mat-select>
                             <mat-option value="Whatsapp">Whatsapp</mat-option>

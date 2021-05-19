@@ -32,6 +32,10 @@ import { AuditAppsComponent } from './appdevelopmentconsole/audit-trail/audit-ap
 import { AuditConsoleUserComponent } from './appdevelopmentconsole/audit-trail/audit-console-user/audit-console-user.component';
 import { AuditLaunchScreenImagesComponent } from './appdevelopmentconsole/audit-trail/audit-launch-screen-images/audit-launch-screen-images.component';
 import { AuditBusinessCategoriesComponent } from './appdevelopmentconsole/audit-trail/audit-business-categories/audit-business-categories.component';
+import { UserLoginSessionDataComponent } from './user-login-session-data/user-login-session-data.component';
+import { AddEditGenericAppsComponent } from './appdevelopmentconsole/appsforusers/appsforallusers/add-edit-generic-apps/add-edit-generic-apps.component';
+import { AddEditCustomAppsComponent } from './appdevelopmentconsole/appsforusers/customapps/add-edit-custom-apps/add-edit-custom-apps.component';
+import { AddEditGetstersAppsComponent } from './appdevelopmentconsole/appsforgetsters/add-edit-getsters-apps/add-edit-getsters-apps.component';
 
 
 @NgModule({
@@ -58,6 +62,10 @@ import { AuditBusinessCategoriesComponent } from './appdevelopmentconsole/audit-
     AuditConsoleUserComponent,
     AuditLaunchScreenImagesComponent,
     AuditBusinessCategoriesComponent,
+    UserLoginSessionDataComponent,
+    AddEditGenericAppsComponent,
+    AddEditCustomAppsComponent,
+    AddEditGetstersAppsComponent,
     
   ],
   imports: [

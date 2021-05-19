@@ -1,6 +1,6 @@
 .bottom-line {   
      box-sizing: content-box;
-    width: 90%;
+    width: 100%;
     float: left;
     border-top:1px solid grey;
   }

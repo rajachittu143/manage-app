@@ -1,0 +1,148 @@
+<div>
+    <div fxLayout="row wrap" style="width: 100%;" fxLayoutALign="end end">
+        <div style="width: 95%; text-align: end;">
+            <button mat-button [matMenuTriggerFor]="menu" style="text-align: end;"><a>Export Selected Data</a></button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>Export PDF</button>
+                <button mat-menu-item>Export SpreadSheet</button>
+                <button mat-menu-item>Export csv File</button>
+                <button mat-menu-item>Export json</button>
+            </mat-menu>
+        </div>
+    </div>
+    <div fxLayout="row wrap">
+        <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%">
+
+        </div>
+        <div fxFlex="22" fxFlex.xs="100%" fxFlex.sm="25%">
+            <div style=" width: 100%; margin-left: 24px;">
+                <mat-form-field appearance="outline" style="width: 100%; color: honeydew;"
+                    class="form-field-style primary-font-family">
+                    <!-- <mat-label style="font-size: 14px;">All Users </mat-label> -->
+                    <mat-select [(value)]="selected_users">
+                        <mat-option value="alluser">All Users </mat-option>
+                        <mat-option value="getsters">Getsters</mat-option>
+                        <mat-option value="nongetsters">Non Getsters</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%">
+
+        </div>
+        <div fxFlex="22" fxFlex.xs="100%" fxFlex.sm="25%">
+            <div style="width: 100%; margin-left: 24px;">
+                <mat-form-field appearance="outline" style="width: 100%; color: honeydew;"
+                    class="form-field-style primary-font-family">
+                    <!-- <mat-label style="font-size: 14px;">VERIFY VIA</mat-label> -->
+                    <mat-select [(value)]="selected_business">
+                        <mat-option value="All Businesses">All Businesses</mat-option>
+                        <mat-option value="manage.getbiz.app">manage.getbiz.app</mat-option>
+                        <mat-option value="Registered Businesses">Registered Businesses</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%">
+
+        </div>
+        <div fxFlex="22" fxFlex.xs="100%" fxFlex.sm="25%">
+            <div style=" width: 100%; margin-left: 24px;">
+                <mat-form-field appearance="outline" style="width: 100%; color: honeydew;"
+                    class="form-field-style primary-font-family">
+                    <!-- <mat-label style="font-size: 14px;">VERIFY VIA</mat-label> -->
+                    <mat-select [(value)]="selected_apps">
+                        <mat-option value="All Apps">All Apps</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%">
+
+        </div>
+        <div fxFlex="22" fxFlex.xs="100%" fxFlex.sm="25%">
+            <div style=" width: 100%; margin-left: 24px;">
+                <mat-form-field appearance="outline" style="width: 100%; color: honeydew;"
+                    class="form-field-style primary-font-family">
+                    <!-- <mat-label style="font-size: 14px;">VERIFY VIA</mat-label> -->
+                    <mat-select [(value)]="selected_login_session">
+                        <mat-option value="Login Session Date/Time">Login Session Date/Time</mat-option>
+                        <mat-option value="Login Face Image/Mobile No">Login Face Image/Mobile No</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%">
+
+        </div>
+    </div>
+    <div class="mat-elevation-z8" style="margin: 24px;">
+        <table mat-table [dataSource]="dataSource">
+            <!-- Checkbox Column -->
+            <ng-container matColumnDef="select">
+                <th mat-header-cell *matHeaderCellDef>
+                    <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+                    </mat-checkbox>
+                </th>
+                <td mat-cell *matCellDef="let row">
+                    <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)">
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="username">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="userid">
+                <th mat-header-cell *matHeaderCellDef>User ID</th>
+                <td mat-cell *matCellDef="let element"> {{element.userid}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="bizid">
+                <th mat-header-cell *matHeaderCellDef>Biz ID</th>
+                <td mat-cell *matCellDef="let element"> {{element.bizid}} </td>
+            </ng-container>
+            <ng-container matColumnDef="bizname">
+                <th mat-header-cell *matHeaderCellDef>Biz Name</th>
+                <td mat-cell *matCellDef="let element"> {{element.bizname}} </td>
+            </ng-container>
+            <ng-container matColumnDef="appid">
+                <th mat-header-cell *matHeaderCellDef>App ID</th>
+                <td mat-cell *matCellDef="let element"> {{element.appid}} </td>
+            </ng-container>
+            <ng-container matColumnDef="appname">
+                <th mat-header-cell *matHeaderCellDef>App Name</th>
+                <td mat-cell *matCellDef="let element"> {{element.appname}} </td>
+            </ng-container>
+            <ng-container matColumnDef="logindata">
+                <th mat-header-cell *matHeaderCellDef>Login Date</th>
+                <td mat-cell *matCellDef="let element"> {{element.logindata}} </td>
+            </ng-container>
+            <ng-container matColumnDef="logintime">
+                <th mat-header-cell *matHeaderCellDef>Login Time</th>
+                <td mat-cell *matCellDef="let element"> {{element.logintime}} </td>
+            </ng-container>
+            <ng-container matColumnDef="logouttime">
+                <th mat-header-cell *matHeaderCellDef>Logout Time</th>
+                <td mat-cell *matCellDef="let element"> {{element.logouttime}} </td>
+            </ng-container>
+            <ng-container matColumnDef="logoutdate">
+                <th mat-header-cell *matHeaderCellDef>Logout Date</th>
+                <td mat-cell *matCellDef="let element"> {{element.logoutdate}} </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+            </tr>
+        </table>
+        <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+
+</div>

@@ -19,9 +19,16 @@
     font-family: Roboto;
 }
 
+.bottom-line {   
+   box-sizing: content-box;
+   width: 100%;
+   margin-top: 10px;
+   float: left;
+   border-top:1px solid grey;
+ }
 
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 15px;
 }
 
 ::-webkit-scrollbar-track {

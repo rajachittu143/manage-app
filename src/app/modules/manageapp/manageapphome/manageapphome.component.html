@@ -1,5 +1,5 @@
-<form>
-    <div fxLayout="column" fxLayoutAlign="start" fxLayoutGap="10px grid">
+<form style="margin: 10px;">
+    <div fxLayout="column" fxLayoutAlign="start">
         <div class="apps-titles-style">Apps Development Console :</div>
         <div fxLayout="row" class="apps-padding">
             <div fxLayout="column" class="app-mat-card-margin-left" fxLayoutAlign="center center">
@@ -15,7 +15,7 @@
         
         <div class="bottom-line"></div>
     </div>
-    <div fxLayout="column" fxLayoutAlign="start" fxLayoutGap="10px grid">
+    <div fxLayout="column" fxLayoutAlign="start">
         <div class="apps-titles-style">Recently Used Apps :</div>
         
         <div fxLayout="row" class="apps-padding">
@@ -53,17 +53,18 @@
         </div>
         <div class="bottom-line"></div>
     </div>
-    <div fxLayout="column" fxLayoutAlign="start" fxLayoutGap="10px grid">
+    <div fxLayout="column" fxLayoutAlign="start">
         <div class="apps-titles-style">Finance & Accounting Apps :</div>
         
         <div fxLayout="row" class="apps-padding">
-            <div fxLayout="column" class="app-mat-card-margin-left" fxLayoutAlign="center center">
+            <div fxLayout="column" class="app-mat-card-margin-left" fxLayoutAlign="center center" [routerLink]="['/manage-app/user-login-session-data']">
                 <mat-card class="app-mat-card-size">
                     <img fxLayoutAlign="center center" src="../../../../assets/images/app_development.png"
                     class="app-mat-card-img-size">
                 </mat-card>
                 <div class="app-name-text-style">
-                    Payments for YourBiz.app
+                    User Login
+                    Session Data
                 </div>
             </div>
             <div fxLayout="column" class="app-mat-card-margin-left" fxLayoutAlign="center center">
