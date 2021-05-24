@@ -1,0 +1,31 @@
+@import "../../../../../../styles.css";
+table {
+    width: 100%;
+}
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    padding: 5px !important;
+}
+
+tr.mat-row, tr.mat-footer-row {
+    height: 36px !important;
+}
+
+.mat-header-cell {
+    color: #3366FF !important;
+    font-size: 14px;
+    font-weight: 700px;
+    text-align: center;
+}
+
+.mat-row:nth-child(even){
+    background-color: #e4f0ec;
+}
+
+.mat-row:nth-child(odd){
+    background-color:#ffffff;
+}
+th,td{
+    text-align: center;
+    border-left: 1px solid #cacaca;
+}

@@ -25,7 +25,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class AuditAppsComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  displayedColumns: string[] = ['select', 'app_id', 'app_name', 'getster_id', 'getster_name','activity','time_stamp'];
+  displayedColumns: string[] = ['select', 'time_stamp','app_id', 'app_name', 'getster_id', 'getster_name','activity'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
 

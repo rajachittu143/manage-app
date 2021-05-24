@@ -24,7 +24,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class AuditLaunchScreenImagesComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  displayedColumns: string[] = ['select', 'getster_id', 'image_name', 'activity', 'time_stamp'];
+  displayedColumns: string[] = ['select', 'time_stamp','getster_id', 'image_name', 'activity'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
 

@@ -36,6 +36,7 @@ import { UserLoginSessionDataComponent } from './user-login-session-data/user-lo
 import { AddEditGenericAppsComponent } from './appdevelopmentconsole/appsforusers/appsforallusers/add-edit-generic-apps/add-edit-generic-apps.component';
 import { AddEditCustomAppsComponent } from './appdevelopmentconsole/appsforusers/customapps/add-edit-custom-apps/add-edit-custom-apps.component';
 import { AddEditGetstersAppsComponent } from './appdevelopmentconsole/appsforgetsters/add-edit-getsters-apps/add-edit-getsters-apps.component';
+import { AuditBusinessCountriesComponent } from './appdevelopmentconsole/audit-trail/audit-business-countries/audit-business-countries.component';
 
 
 @NgModule({
@@ -66,6 +67,7 @@ import { AddEditGetstersAppsComponent } from './appdevelopmentconsole/appsforget
     AddEditGenericAppsComponent,
     AddEditCustomAppsComponent,
     AddEditGetstersAppsComponent,
+    AuditBusinessCountriesComponent,
     
   ],
   imports: [

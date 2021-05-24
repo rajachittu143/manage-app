@@ -1,9 +1,22 @@
-.bottom-line {   
-    box-sizing: content-box;
-   width: 90%;
-   float: left;
-   border-top:1px solid grey;
- }
+@import '../../../../../../styles.css';
+
+.heding-text{
+  font-size: 15px;
+  margin-top: 5px;
+  font-style: normal;
+  font-weight: 600;
+  font-family: Roboto;
+  padding: 0px !important;
+}
+
+.sub-heding-text{
+  font-size: 15px;
+  margin-top: 5px;
+  font-style: normal;
+  /* font-weight: 550; */
+  font-family: Roboto;
+  padding: 0px !important;
+}
 
  .apps-padding{
    padding: 0px !important;
@@ -35,6 +48,14 @@ width: 100%;
 .app-mat-card-img-size{
  width: 35px;height: 35px; padding: 0px;
 }
+
+.apps-titles-style{
+  font-size: 14px;
+margin-top: 5px; color: #3366FF;
+font-weight: 500;
+font-family: Roboto;
+}
+
 
 .app-name-text-style{
  font-family: Roboto;
