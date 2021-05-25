@@ -24,7 +24,7 @@ const routes: Routes = [
         component: LoginComponent,
         data: {
           title: 'getbiz.app',
-          description: '',
+          description: 'getbiz',
           keywords: ''
         }
       },
@@ -33,7 +33,7 @@ const routes: Routes = [
         component: Login1Component,
         data: {
           title: 'getbiz.app',
-          description: '',
+          description: 'getbiz',
           keywords: ''
         }
       },
@@ -42,7 +42,7 @@ const routes: Routes = [
         component: RegistergetsterComponent,
         data: {
           title: 'getbiz.app',
-          description: '',
+          description: 'getbiz',
           keywords: ''
         }
       },
@@ -51,7 +51,7 @@ const routes: Routes = [
         component: RegisterfaceComponent,
         data: {
           title: 'getbiz.app',
-          description: '',
+          description: 'getbiz',
           keywords: ''
         }
       },
@@ -60,7 +60,7 @@ const routes: Routes = [
         component: ManageapphomeComponent,
         data: {
           title: 'getbiz.app',
-          description: '',
+          description: 'getbiz',
           keywords: ''
         }
       }, {
@@ -68,7 +68,7 @@ const routes: Routes = [
         component: AppdevelopmentconsoleComponent,
         data: {
           title: 'getbiz.app',
-          description: '',
+          description: 'getbiz',
           keywords: ''
         }
       },
@@ -77,7 +77,7 @@ const routes: Routes = [
         component: GetsterCategoryAdminComponent,
         data: {
           title: 'getbiz.app',
-          description: '',
+          description: 'getbiz',
           keywords: ''
         }
       }, {
@@ -85,7 +85,7 @@ const routes: Routes = [
         component: GetsterAccessControlComponent,
         data: {
           title: 'getbiz.app',
-          description: '',
+          description: 'getbiz',
           keywords: ''
         }
       }, {
@@ -93,7 +93,7 @@ const routes: Routes = [
         component: UserLoginSessionDataComponent,
         data: {
           title: 'getbiz.app',
-          description: '',
+          description: 'getbiz',
           keywords: ''
         }
       },
@@ -102,7 +102,7 @@ const routes: Routes = [
         component: AddEditGenericAppsComponent,
         data: {
           title: 'getbiz.app',
-          description: '',
+          description: 'getbiz',
           keywords: ''
         }
       },
@@ -111,7 +111,7 @@ const routes: Routes = [
         component: AddEditCustomAppsComponent,
         data: {
           title: 'getbiz.app',
-          description: '',
+          description: 'getbiz',
           keywords: ''
         }
       },
@@ -120,7 +120,7 @@ const routes: Routes = [
         component: AddEditGetstersAppsComponent,
         data: {
           title: 'getbiz.app',
-          description: '',
+          description: 'getbiz',
           keywords: ''
         }
       }
