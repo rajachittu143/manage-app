@@ -1,11 +1,53 @@
 <form [formGroup]="appDevelopmentConsoleForm" (ngSubmit)="onSubmit($event)">
     <div>
-        <div fxLayout="row" style="width: 100%; margin-top: 5px;">
-            <div fxFlex="100" fxFlex.gt-xs="50"  fxLayoutAlign="start" class="app-development-title">
-               <u  style="margin-left: 65px; " class="primary-color"> User Activity in this app is recorded under Audit Trail to track misuse. </u>
+        <div>
+            <div fxLayout="row" style="width: 100%; margin-top: 15px; margin-bottom: 15px;" fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl>
+                <div class="scroll-container" style="overflow: auto">
+                    <div class="nav-btn" mat-stroked-button (click)="btnAppForUser()">PWA Apps for Users</div>
+                    <div class="nav-btn" mat-stroked-button (click)="btnAppForGetster()">Apps for GETSTERs</div>
+                    <div class="nav-btn" mat-stroked-button (click)="btnLaunchScreenImage()">Launch Screen Images</div>
+                    <div class="nav-btn" mat-stroked-button (click)="btnConsoleUser()">Console Users</div>
+                    <div class="nav-btn" mat-stroked-button (click)="btnAuditTrail()">Audit Trail</div>
+
+                    <!-- <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger"
+                        (click)="menuTrigger.openMenu()">
+                        <mat-icon  [ngStyle]="{'color':'#3366FF'}">menu</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu" [overlapTrigger]="false" class="customize">
+                        <span (mouseleave)="menuTrigger.closeMenu()">
+                            <button mat-menu-item (click)="btnAppForUser()" style="border-bottom: 1px solid white;">
+                                <span class="toolbar-text">PWA Apps for Users</span>
+                            </button>
+                            <button mat-menu-item (click)="btnAppForGetster()" style="border-bottom: 1px solid white;">
+                                <span class="toolbar-text">Apps for GETSTERs</span>
+                            </button>
+                            <button mat-menu-item (click)="btnLaunchScreenImage()" style="border-bottom: 1px solid white;">
+                                 <span class="toolbar-text">Launch Screen Images</span>
+                            </button>
+                            <button mat-menu-item (click)="btnConsoleUser()" style="border-bottom: 1px solid white;">
+                                <span class="toolbar-text">Console Users</span>
+                            </button>
+
+                            <button mat-menu-item (click)="btnAuditTrail()" style="border-bottom: 1px solid white;">
+                                <span class="toolbar-text">Audit Trail</span>
+                            </button>
+                        </span>
+                    </mat-menu> -->
+                </div>
+                <!-- <div fxFlex="80" style="margin-top: 12px;">
+                    <div>{{tabNames}}</div>
+                </div> -->
+            </div>
+
+        
+        </div>
+        <div fxLayout="row" style="width: 100%; margin-top: 15px;" fxHide.xs>
+            <div fxFlex="100" fxFlex.gt-xs="50" fxLayoutAlign="start" class="app-development-title">
+                <u style="margin-left: 65px; " class="primary-color"> User Activity in this app is recorded under Audit
+                    Trail to track misuse. </u>
             </div>
         </div>
-        <div fxLayout="row wrap">
+        <div fxLayout="row wrap" fxHide.xs>
             <div fxFlex="100" fxFlex.gt-xs="17" style="width: 100%;">
                 <div style="padding:10px">
                     <button class="app-development-btn" mat-stroked-button type="submit" name="AppForUser"
@@ -64,15 +106,3 @@
 
     </div>
 </form>
-
-<!-- <mat-tab-group style="width: 90%;" style="margin-top: 15px;">
-    <mat-tab label="PWA Apps for Users">
-        <app-appsforusers></app-appsforusers>
-    </mat-tab>
-    <mat-tab label="Apps for GETSTERs">
-        <app-appsforgetsters></app-appsforgetsters>
-    </mat-tab>
-    <mat-tab label="Launch Screen Images">
-        <app-launchscreenimages></app-launchscreenimages>
-    </mat-tab>
-</mat-tab-group> -->

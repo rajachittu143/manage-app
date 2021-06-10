@@ -1,9 +1,9 @@
 export const environment = {
   production: false,
   baseHref: '/',
-  host: 'https://dev-gcp-kong.dltk.ai/',
+  host: 'https://api.getbiz.app/api/',
 
-  // signin: 'oauth/login',
+  insertMaster: 'getstermaster',
   // signup: 'register',
   // user: 'user/initialize',
   // changePassword: 'user/changePassword',

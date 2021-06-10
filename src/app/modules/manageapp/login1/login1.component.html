@@ -1,24 +1,49 @@
-<div fxLayout="row wrap" style="margin-top: 10px;">
-    <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="33%" class="login-screen-height"
-        fxLayoutAlign="center center">
+<div fxLayout="row wrap" style="margin-top: 20px;">
+    <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="33%" class="login-screen-height" fxLayoutAlign="center center">
 
-        <div style="margin-top: 20px;">
+        <div>
             <div>
-                <a href="" style="color: blue; cursor: pointer;"> Login to Access “Users Login Session Data App”</a>
+                <span style="color: blue; cursor: pointer; font-weight: 600;">Login to Access App Development Console</span>
             </div>
 
-            <div fxLayoutAlign="center center" style="margin-top:20px">
+            <div fxLayoutAlign="center center" style="margin-top:10px">
                 Face Recognition Login*
             </div>
-            <div fxLayoutAlign="center center" style="margin-top: 10px;">
-                <img src="../../../../../assets/images/capture.png" alt=""
-                    style="height: 240px;width: 240px; cursor: pointer;">
+
+            <div fxLayoutAlign="center center" fxLayout="column">
+                <!-- <img src="../../../../../assets/images/capture.png" alt=""
+                    style="height: 240px;width: 240px; cursor: pointer;"> -->
+
+                <div class="video-container" *ngIf="!error">
+                    <video style="margin-top: 10px;" [class.show]="!isCaptured" [class.hide]="isCaptured" #video id="video" [width]="WIDTH"
+                        [height]="HEIGHT" autoplay></video>
+                    <canvas style="margin-top: 10px;" [class.show]="isCaptured" [class.hide]="!isCaptured" #canvas id="canvas" [width]="WIDTH1"
+                        [height]="HEIGHT1"></canvas>
+                </div>
+
+                <div class="snap-container">
+                    <button mat-flat-button style="background: #3366FF;color: #FFFFFF; margin-top: 10px;" *ngIf="!isCaptured" (click)="capture()">Snap Photo</button>
+                    <button mat-flat-button style="background: red;color: #FFFFFF; margin-top: 10px;" *ngIf="isCaptured"  (click)="removeCurrent()">Take Another</button>
+
+                    <div *ngIf="error" class="text-danger mt-4">
+                        {{ error }}. Please click refresh
+                        <div class="mt-5">
+                            <!-- <img src="https://trungk18.com/7e0976255739e721501803ee074f1f94/camera.gif" /> -->
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="list-unstyled">
+                    <li *ngFor="let src of captures; let idx = index" (click)="setPhoto(idx)">
+                        <img [src]="src" height="50" />
+                    </li>
+                </ul>
             </div>
 
             <form [formGroup]="signinForm" (ngSubmit)="signin()" style="width: 100%;" fxLayoutAlign="center center">
-                <div style="width: 60%;">
+                <div style="width: 100%;">
                     <mat-form-field appearance="outline" class="form-field-style"
-                        style="margin-top: 10px;margin-left: 10px; width: 100%;">
+                        style="width: 100%;">
                         <mat-label>Password</mat-label>
                         <mat-icon matPrefix class="icon-prefix-padding">lock_outline</mat-icon>
                         <input type="password" class="input_style" matInput placeholder="Password" value=""
@@ -32,7 +57,8 @@
                     </mat-form-field>
 
                     <div style="margin-top: 10px;" fxLayoutAlign="center center">
-                        <button mat-flat-button class="sign-in-btn" [routerLink]="['/manage-app/appdevelopmentconsole']">LOG IN</button>
+                        <button mat-flat-button class="sign-in-btn"
+                            [routerLink]="['/manage-app/appdevelopmentconsole']">LOG IN</button>
                     </div>
                 </div>
             </form>
@@ -40,19 +66,20 @@
     </div>
 
     <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="33%" fxLayoutAlign="center center">
-        <div style="margin-top: 20px;">
         <div>
-            <a href="" style="color: blue;">In case your webcamera is not working:</a><br>
-            1. Face Login with your mobile<br>
-            2. Click on “<a href="" style="color: blue;">get</a>biz.<a href="" style="color: blue;">app</a>” icon on the title bar.<br>
-            3. Click on “Scan QR Code for Secure LOGIN”<br>
-            4. Scan the following QR code to login.<br>
-        </div>
+            <div style=" margin-top: 10px;">
+                <span style="color: blue; font-weight: 600;">In case your webcamera is not working:</span><br>
+                1. Face Login with your mobile<br>
+                2. Click on “<span href="" style="color: blue; font-weight: 600;">get</span>biz.<span href="" style="color: blue; font-weight: 600">app</span>” icon on
+                the title bar.<br>
+                3. Click on “Scan QR Code for Secure LOGIN”<br>
+                4. Scan the following QR code to login.<br>
+            </div>
 
-        <div fxLayoutAlign="center center" style="margin-top: 10px; margin-top: 20px;">
-            <img src="../../../../../assets/images/barcode.png" alt=""
-                style="height: 200px;width: 200px; margin-top: 20px; cursor: pointer;">
-        </div>
+            <div fxLayoutAlign="center center" style="margin-top: 10px;  margin-bottom: 20px;">
+                <img src="../../../../../assets/images/barcode.png" alt=""
+                    style="height: 200px;width: 200px; margin-top: 20px; cursor: pointer;">
+            </div>
         </div>
     </div>
 </div>

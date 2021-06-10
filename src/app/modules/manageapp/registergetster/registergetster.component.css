@@ -25,3 +25,36 @@
     bottom: 20px;
     position: absolute;
 }
+
+.heading_text{
+    color: #3366FF;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.form-field-width{
+    width: 60%;
+}
+
+@media only screen and (min-width: 600px) {
+    
+}
+
+@media only screen and (max-width: 599px) {
+    .heading_text{
+       font-size: 12px;
+       margin-top: 10px;
+    }
+    .form-field-style{
+        line-height: 19px;
+    }
+    .login-right-side-text-style{
+        font-size: 14px;
+        margin: 10px;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .form-field-width{
+        width: 100%;
+    }
+}

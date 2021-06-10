@@ -1,13 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-appdevelopmentconsole',
   templateUrl: './appdevelopmentconsole.component.html',
-  styleUrls: ['./appdevelopmentconsole.component.css']
+  styleUrls: ['./appdevelopmentconsole.component.scss']
 })
 export class AppdevelopmentconsoleComponent implements OnInit {
+  @Output() public sidenavToggle = new EventEmitter();
 
+  toggleMenu = false;
+  
+  onToggle() {
+    this.toggleMenu = !this.toggleMenu;
+  }
+  
   appDevelopmentConsoleForm: FormGroup = new FormGroup({});
   tabName: string = "AppForUser";
 
@@ -17,7 +24,40 @@ export class AppdevelopmentconsoleComponent implements OnInit {
 
   }
 
+  public onToggleSidenav = () => {
+    this.sidenavToggle.emit();
+    
+  }
+
+  tabNames: string = "PWA Apps for Users";
+  btnAppForUser(){
+    this.tabName = "AppForUser";
+    this.tabNames = "PWA Apps for Users";
+  }
+
+  btnAppForGetster(){
+    this.tabName = "AppForGetsters";
+    this.tabNames = "Apps for GETSTERs";
+  }
+
+  btnLaunchScreenImage(){
+    this.tabName = "LaunchScreenimages";
+    this.tabNames = "Launch Screen Images";
+  }
+
+  btnConsoleUser(){
+    this.tabName = "ConsoleUser";
+    this.tabNames = "Console Users";
+  }
+
+  btnAuditTrail(){
+    this.tabName = "AuditTrail";
+    this.tabNames = "Audit Trail";
+  }
+
+
   onSubmit(event: any) {
+    console.log("Ok"+event.submitter.namw);
     if (event.submitter.name == "AppForUser") {
       this.tabName = "AppForUser";
     } else if (event.submitter.name == "AppForGetsters") {
@@ -43,5 +83,6 @@ export class AppdevelopmentconsoleComponent implements OnInit {
     }
     // return status != "FAIL" ? "green" : "red";
   }
+  
 
 }

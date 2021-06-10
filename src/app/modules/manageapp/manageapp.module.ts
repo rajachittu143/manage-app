@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ManageappRoutingModule } from './manageapp-routing.module';
-import { LoginComponent } from './login/login.component';
 import { ThemeModule } from 'src/app/core/theme.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -19,8 +18,6 @@ import { AppsforallusersComponent } from './appdevelopmentconsole/appsforusers/a
 import { CustomappsComponent } from './appdevelopmentconsole/appsforusers/customapps/customapps.component';
 import { ConsoleuserComponent } from './appdevelopmentconsole/consoleuser/consoleuser.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { RegistergetsterComponent } from './registergetster/registergetster.component';
-import { RegisterfaceComponent } from './registerface/registerface.component';
 import { GetsterCategoryAdminComponent } from './getster-category-admin/getster-category-admin.component';
 import { GetsterAccessControlComponent } from './getster-access-control/getster-access-control.component';
 import { NewGetsterComponent } from './getster-access-control/new-getster/new-getster.component';
@@ -37,6 +34,8 @@ import { AddEditGenericAppsComponent } from './appdevelopmentconsole/appsforuser
 import { AddEditCustomAppsComponent } from './appdevelopmentconsole/appsforusers/customapps/add-edit-custom-apps/add-edit-custom-apps.component';
 import { AddEditGetstersAppsComponent } from './appdevelopmentconsole/appsforgetsters/add-edit-getsters-apps/add-edit-getsters-apps.component';
 import { AuditBusinessCountriesComponent } from './appdevelopmentconsole/audit-trail/audit-business-countries/audit-business-countries.component';
+import { MenuAppdevelopmentConsoleComponent } from './appdevelopmentconsole/menu-appdevelopment-console/menu-appdevelopment-console.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -45,6 +44,7 @@ import { AuditBusinessCountriesComponent } from './appdevelopmentconsole/audit-t
     Login1Component,
     ManageapphomeComponent,
     AppdevelopmentconsoleComponent,
+    MenuAppdevelopmentConsoleComponent,
     AppsforgetstersComponent,
     AppsforusersComponent,
     LaunchscreenimagesComponent,
@@ -68,6 +68,7 @@ import { AuditBusinessCountriesComponent } from './appdevelopmentconsole/audit-t
     AddEditCustomAppsComponent,
     AddEditGetstersAppsComponent,
     AuditBusinessCountriesComponent,
+    MenuAppdevelopmentConsoleComponent,
     
   ],
   imports: [
@@ -78,6 +79,7 @@ import { AuditBusinessCountriesComponent } from './appdevelopmentconsole/audit-t
     ReactiveFormsModule,
     RouterModule,
     FlexLayoutModule,
+    MatSidenavModule,
     NgxIntlTelInputModule,
   ],
   providers:[],

@@ -1,11 +1,19 @@
 <div class="mp-header">
     <mat-toolbar color="primary" [ngClass]="toggleMenu ? 'angular-material-toolbar' : 'material-toolbar'">
         <div>
+            <mat-icon [ngStyle]="{'color':'white','margin-top':'7px','margin-right':'4px'}">keyboard_arrow_left</mat-icon>
+
+        </div>
+
+        <div>
             <!-- <a routerLink="/"> -->
-                <img style="margin-top: 27px;height: 55px;width: 55px;" src="../../../../../assets/icons/logo.png" alt="Audits set-up in Chrome DevTools">
+            <img style="margin-top: 27px;height: 55px;width: 55px;" src="../../../../../assets/icons/logo.png"
+                alt="Audits set-up in Chrome DevTools">
             <!-- </a> -->
         </div>
         <div class="toolbar-text">www.getbiz.app</div>
+
+
         <span class="spacer"></span>
         <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
             <img style="margin-left: 10px; width: 20px;height: 20px; cursor: pointer;"
@@ -16,7 +24,8 @@
                 Web App</div>
         </div>
         <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
-            <img style="width: 20px;height: 20px;cursor: pointer;" src="../../../../../assets/icons/download.png" alt="Audits set-up in Chrome DevTools">
+            <img style="width: 20px;height: 20px;cursor: pointer;" src="../../../../../assets/icons/download.png"
+                alt="Audits set-up in Chrome DevTools">
         </div>
         <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center">
             <mat-form-field style="color: honeydew;font-size: 14px;">
@@ -31,7 +40,8 @@
         <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center">
             <div [matMenuTriggerFor]="accountMenu">
                 <img src="assets/icons/profile_icon.png"
-                    style="width: 55px;height: 55px; margin-top: 27px;cursor: pointer;" alt="Audits set-up in Chrome DevTools" />
+                    style="width: 55px;height: 55px; margin-top: 27px;cursor: pointer;"
+                    alt="Audits set-up in Chrome DevTools" />
             </div>
             <mat-menu #accountMenu="matMenu">
                 <button mat-menu-item>
@@ -45,7 +55,58 @@
                 </button>
             </mat-menu>
         </div>
-        <div fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl (click)="onToggle()">
+        <div fxLayout="row" style="width: 100%;" fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl>
+            <div fxLayoutAlign="end end" style="width: 100%;">
+                <button mat-icon-button [matMenuTriggerFor]="menu" fxLayoutAlign="end end">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu" [overlapTrigger]="false">
+                    <button mat-menu-item style="border-bottom: 1px solid gray;">
+                        <mat-icon>account_circle</mat-icon>
+                        <span>Profile</span>
+                    </button>
+                    <button mat-menu-item [matMenuTriggerFor]="languages" style="border-bottom: 1px solid gray;">
+                        <mat-icon>language</mat-icon>
+                        <span>Language</span>
+                    </button>
+
+                    <button mat-menu-item style="border-bottom: 1px solid gray;">
+                        <mat-icon>share</mat-icon>
+                        <span>Share</span>
+                    </button>
+                    <button mat-menu-item style="border-bottom: 1px solid gray;">
+                        <mat-icon>file_download</mat-icon>
+                        <span>Download</span>
+                    </button>
+                    <button mat-menu-item style="border-bottom: 1px solid gray;">
+                        <mat-icon>exit_to_app</mat-icon>
+                        <span>Logout</span>
+                    </button>
+
+                </mat-menu>
+                <mat-menu #languages="matMenu">
+                    <button mat-menu-item>English</button>
+                    <button mat-menu-item>Tamil</button>
+                    <button mat-menu-item>Hindi</button>
+                </mat-menu>
+            </div>
+            <!-- <div fxFlex="40"></div>
+            <div fxFlex="20">
+                <div fxHide.gt mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
+                    <img style="width: 20px;height: 20px;cursor: pointer;"
+                        src="../../../../../assets/icons/share.png" alt="Audits set-up in Chrome DevTools">
+                </div>
+            </div>
+            <div fxFlex="10"></div>
+            <div fxFlex="30" >
+                <div fxHide.gt mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
+                    <img style="width: 20px;height: 20px;cursor: pointer;"
+                        src="../../../../../assets/icons/download.png" alt="Audits set-up in Chrome DevTools">
+                </div>
+            </div> -->
+
+        </div>
+        <!-- <div fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl (click)="onToggle()">
             <div *ngIf="toggleMenu == false; else menu">
                 <button mat-icon-button>
                     <mat-icon>menu</mat-icon>
@@ -69,6 +130,6 @@
                     <span class="icon-text">Profile</span>
                 </div>
             </ng-template>
-        </div>
+        </div> -->
     </mat-toolbar>
 </div>

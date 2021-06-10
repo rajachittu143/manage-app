@@ -25,13 +25,17 @@
   border-radius:20px;
  background-color: #3366FF;
  color: #FFFFFF;
- width: 100%;
+ width: 85%;
+ line-height: 25px;
+ font-size: 12px;
 }
 .publish-button{
  border-radius:20px;
 background-color: #9A9A9A;
 color: #FFFFFF;
 width: 100%;
+line-height: 25px;
+font-size: 12px;
 }
 
 .unpublish-button{
@@ -39,6 +43,8 @@ border-radius:20px;
 background-color: #9A9A9A;
 color: #FFFFFF;
 width: 100%;
+line-height: 25px;
+font-size: 12px;
 }
 
 .app-mat-card-size{

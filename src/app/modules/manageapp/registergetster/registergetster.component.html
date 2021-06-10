@@ -1,13 +1,12 @@
 <div fxLayout="row wrap" style="margin-top: 10px;">
     <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="33%" class="login-screen-height" fxLayoutAlign="center center">
 
-        <div style="margin-top: 20px;">
-            <div>
-                <a style="color: blue;">User Registration for GETSTER - Restricted Access</a>
+        <div class="heading_text primary-font-family">
+            <div style="color: blue;">User Registration for GETSTER - Restricted Access
             </div>
 
             <form [formGroup]="registerGetsterForm" (ngSubmit)="registerGetster()" style="width: 100%;">
-                <div style="width: 60%;">
+                <div class="form-field-width">
                     <mat-form-field appearance="outline" class="form-field-style"
                         style="margin-top: 10px; width: 100%;">
                         <mat-label>First Name</mat-label>
@@ -24,9 +23,42 @@
 
                 </div>
             </form>
-            <div>Select the categories that best describes your relationship with
-               <span style="margin-top: 10px;"> <img style="width: 75px;" src="../../../../../assets/icons/getbizapp.png"> </span>
-                <a href="" style="color: red;">*</a>:
+            <div style="color: gray; margin-top: 10px;">Select the categories that best describes your relationship with
+                <!-- <span style="margin-top: 10px;"> -->
+                    <span style="color: blue; font-weight: 600;">get</span>biz.<span style="color: blue; font-weight: 600">app</span>
+                
+                <span href="" style="color: red;">*</span>:
+            </div>
+            <div>
+                <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                    <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
+                        <button mat-icon-button disabled></button>
+                        <mat-checkbox class="checklist-leaf-node" [checked]="checklistSelection.isSelected(node)"
+                            (change)="checklistSelection.toggle(node);">{{node.item}}</mat-checkbox>
+                    </mat-tree-node>
+
+                    <mat-tree-node *matTreeNodeDef="let node; when: hasNoContent" matTreeNodePadding>
+                        <button mat-icon-button disabled></button>
+                        <mat-form-field>
+                            <input matInput #itemValue placeholder="New item...">
+                        </mat-form-field>
+                        <button mat-button (click)="saveNode(node, itemValue.value)">Save</button>
+                    </mat-tree-node>
+
+                    <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+                        <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + node.filename">
+                            <mat-icon class="mat-icon-rtl-mirror">
+                                {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                            </mat-icon>
+                        </button>
+                        <mat-checkbox [checked]="descendantsAllSelected(node)"
+                            [indeterminate]="descendantsPartiallySelected(node)"
+                            (change)="todoItemSelectionToggle(node)">{{node.item}}</mat-checkbox>
+                        <button mat-icon-button (click)="addNewItem(node)">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </mat-tree-node>
+                </mat-tree>
             </div>
         </div>
 
@@ -36,9 +68,8 @@
         <div style="margin-top: 20px;">
 
             <div class="secondary-color login-right-side-text-style primary-font-family">
-                <a href="" style="color: blue; cursor: pointer;"> GETSTERs:</a><br>
-                GETSTERs
-                (EMPLOYEES/DEVELOPERS/CONSULTANTS/ASSOCIATES/SERVICE <br> PROVIDERS/STAKE HOLDERS) of
+                <span style="color: blue; cursor: pointer;"> GETSTERs:</span><br>
+                GETSTERs(EMPLOYEES / DEVELOPERS / CONSULTANTS / ASSOCIATES/SERVICE <br> PROVIDERS/STAKE HOLDERS) of
             </div>
 
             <div style="padding-top: 10px;text-align: center;">
@@ -52,6 +83,8 @@
     </div>
 
 </div>
-<button mat-flat-button class="btn-float-right register-getster-btn"
+<!-- <button mat-flat-button class="btn-float-right register-getster-btn" (click)="registerGetster()">Next</button> -->
+
+<button mat-flat-button class="btn-float-right register-getster-btn" (click)="registerGetster()"
     [routerLink]="['/manage-app/register-face']">Next
 </button>

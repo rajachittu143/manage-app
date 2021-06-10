@@ -15,11 +15,14 @@ import { MatListModule } from '@angular/material/list';
 import { ForgetPasswordComponent } from './shared/components/forget-password/forget-password.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { AppLoaderComponent } from './shared/services/app-loader/app-loader/app-loader.component';
+import { MatTreeModule } from '@angular/material/tree';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ForgetPasswordComponent
+    ForgetPasswordComponent,
+    AppLoaderComponent
   ],
   imports: [
     MatSidenavModule,
@@ -33,6 +36,7 @@ import { environment } from '../environments/environment';
     FormsModule,
     ReactiveFormsModule,
     ThemeModule,
+    MatTreeModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

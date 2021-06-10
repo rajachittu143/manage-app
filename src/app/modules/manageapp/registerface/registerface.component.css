@@ -7,5 +7,40 @@
 .form-field-style {
     margin-bottom: -1.25em !important;
     font-size: 14px;
-    width: 30%;
+    /* width: 30%; */
+}
+
+.form-field-width{
+    width: 37%;
+}
+
+.tel-margin{
+    margin-left: 45px;
+}
+
+@media only screen and (min-width: 600px) {
+    
+}
+
+@media only screen and (max-width: 599px) {
+    .heading_text{
+       font-size: 12px;
+       margin-top: 10px;
+    }
+    .form-field-style{
+        line-height: 19px;
+    }
+    .login-right-side-text-style{
+        font-size: 14px;
+        margin: 10px;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .form-field-width{
+        width: 100%;
+    }
+    .tel-margin{
+        margin-left: 0px;
+    }
+    
 }

@@ -2,17 +2,17 @@
     <div fxLayout="row wrap" style="margin-top: 10px;">
         <div fxFlex="3" fxFlex.xs="100%" fxFlex.sm="25%"></div>
         <div fxFlex="40" fxFlex.xs="100%" fxFlex.sm="25%" class="heding-text primary-color">
-            <u>User Activity in this app is recorded under Audit Trail to
+            <u style="font-size: 14px; font-weight: 600;">User Activity in this app is recorded under Audit Trail to
                 track misuse. </u>
         </div>
         <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
-        <div fxFlex="25" fxFlex.xs="100%" fxFlex.sm="25%" class="heding-text primary-color">ADD/EDIT Apps for all Users
+        <div fxFlex="25" fxFlex.xs="100%" fxFlex.sm="25%" style="font-size: 14px; font-weight: 600;" class="heding-text primary-color">ADD/EDIT Apps for all Users
         </div>
         <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
         <div fxFlex="25" fxFlex.xs="100%" fxFlex.sm="25%">
             <div fxLayout="row wrap">
-                <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="25%" class="heding-text">APP ID No:</div>
-                <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="25%">
+                <div fxFlex="50" fxFlex.xs="50" fxFlex.sm="50" class="heding-text">APP ID No:</div>
+                <div fxFlex="50" fxFlex.xs="50" fxFlex.sm="50">
                     <button class="app-btn" mat-stroked-button>a2012011</button>
                 </div>
             </div>
@@ -70,7 +70,6 @@
         <div fxFlex="100" fxFlex.gt-xs="49">
             <div class="key-text">Name to be displayed in title bar *:</div>
             <div>
-
                 <mat-form-field appearance="outline" class="form-field-style" style="width: 70%; border-radius: 20px;">
                     <!-- <mat-label style="padding-left: -5px;">Enter Your Registered Mobile number *:</mat-label> -->
                     <!-- <mat-icon matPrefix class="icon-prefix-padding">smartphone</mat-icon> -->
@@ -102,7 +101,8 @@
                 </div>
             </div>
             <div fxFlex="33.3" fxFlex.xs="100%" fxFlex.sm="25%">
-                <div fxLayoutAlign="center center" class="heding-text">Name of the App <span style="color: red;"> * </span>:</div>
+                <div fxLayoutAlign="center center" class="heding-text">Name of the App <span style="color: red;"> *
+                    </span>:</div>
                 <div fxLayoutAlign="center center" style="margin-top: 10px;">
                     <mat-form-field appearance="outline" class="form-field-style"
                         style="width: 80%; border-radius: 20px;">
@@ -168,16 +168,16 @@
             <div fxLayout="row wrap" style="margin-top: 10px;">
                 <div fxFlex="48" fxFlex.xs="100%" fxFlex.sm="25%">
                     <div fxLayout="row wrap" style="margin-top: 10px;">
-                        <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="25%">
+                        <div fxFlex="50" fxFlex.xs="50" fxFlex.sm="50">
                             <div class="heding-text">Notifications:</div>
                         </div>
-                        <div fxFlex="25" fxFlex.xs="100%" fxFlex.sm="25%">
+                        <div fxFlex="25" fxFlex.xs="25" fxFlex.sm="25">
                             <button style="margin-left: 10px; margin-bottom: 20px;" mat-flat-button
                                 class="new-getster-btn">
                                 ADD
                             </button>
                         </div>
-                        <div fxFlex="25" fxFlex.xs="100%" fxFlex.sm="25%">
+                        <div fxFlex="25" fxFlex.xs="25" fxFlex.sm="25">
                             <button style="margin-left: 10px; margin-bottom: 20px;" mat-flat-button
                                 class="new-getster-btn">
                                 EDIT
@@ -206,23 +206,51 @@
 
                 <div fxFlex="48" fxFlex.xs="100%" fxFlex.sm="25%">
 
-                    <div fxLayout="row wrap" style="margin-top: 10px;">
-                        <div fxFlex="40" fxFlex.xs="100%" fxFlex.sm="25%">
+                    <div style="margin-top: 10px;" fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl>
+                        <div class="heding-text">Comment/Suggestion from Users:</div>
+
+                        <div fxLayout="row wrap" style="margin-top: 10px;">
+                            <div fxFlex="35" fxFlex.xs="35" fxFlex.sm="35">
+                                <button  mat-flat-button
+                                    class="new-getster-btn">
+                                    PRIVATE REPLY
+                                </button>
+                            </div>
+                            <div fxFlex="5" fxFlex.xs="5" fxFlex.sm="5"></div>
+
+                            <div fxFlex="35" fxFlex.xs="35" fxFlex.sm="35">
+                                <button  mat-flat-button
+                                    class="new-getster-btn">
+                                    PUBLIC REPLY
+                                </button>
+                            </div>
+                            <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="2"></div>
+                            <div fxFlex="20" fxFlex.xs="20" fxFlex.sm="20">
+                                <button   mat-flat-button
+                                    class="new-getster-btn">
+                                    DELETE
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div fxLayout="row wrap" style="margin-top: 10px;" fxHide.xs>
+                        <div fxFlex="40" fxFlex.xs="40" fxFlex.sm="40">
                             <div class="heding-text">Comment/Suggestion from Users:</div>
                         </div>
-                        <div fxFlex="20" fxFlex.xs="100%" fxFlex.sm="25%">
+                        <div fxFlex="20" fxFlex.xs="40" fxFlex.sm="40">
                             <button style="margin-left: 10px; margin-bottom: 20px;" mat-flat-button
                                 class="new-getster-btn">
                                 PRIVATE REPLY
                             </button>
                         </div>
-                        <div fxFlex="20" fxFlex.xs="100%" fxFlex.sm="25%">
+                        <div fxFlex="20" fxFlex.xs="40" fxFlex.sm="40">
                             <button style="margin-left: 10px; margin-bottom: 20px;" mat-flat-button
                                 class="new-getster-btn">
                                 PUBLIC REPLY
                             </button>
                         </div>
-                        <div fxFlex="20" fxFlex.xs="100%" fxFlex.sm="25%">
+                        <div fxFlex="20" fxFlex.xs="40" fxFlex.sm="40">
                             <button style="margin-left: 10px; margin-bottom: 20px;" mat-flat-button
                                 class="new-getster-btn">
                                 DELETE
@@ -231,18 +259,19 @@
                     </div>
 
                     <div>
-                        <mat-card class="p-0 card-height" style="height: 250px;">
+                        <mat-card class="p-0 card-height" style="height: 250px; margin-top: 10px;">
                             <div fxLayout="row wrap">
-                                <div fxFlex="10" fxFlex.xs="100%" fxFlex.sm="25%">
+                                <div fxFlex="10" fxFlex.xs="25" fxFlex.sm="25">
                                     <img src="../../../../../../../assets/icons/profile_icon.png" alt=""
                                         style="cursor: pointer;">
                                 </div>
-                                <div fxFlex="80" fxFlex.xs="100%" fxFlex.sm="25%">
+                                <div fxFlex="80" fxFlex.xs="65" fxFlex.sm="65">
                                     <div><span><u style="color: blue;">Maximillian Jacobson</u></span><span
                                             style="color: gray;"> - XYZ Company - Manager</span></div>
-                                    <div class="comments-text">This app was very helpful in solving the real industry problem.</div>
+                                    <div class="comments-text">This app was very helpful in solving the real industry
+                                        problem.</div>
                                 </div>
-                                <div fxFlex="10" fxFlex.xs="100%" fxFlex.sm="25%">
+                                <div fxFlex="10" fxFlex.xs="10" fxFlex.sm="10">
                                     <mat-checkbox></mat-checkbox>
                                 </div>
                             </div>

@@ -2,24 +2,49 @@
     <div fxLayout="column" fxLayoutAlign="start">
 
 
-        <div fxLayout="row wrap" style="margin-top: 10px;">
-            <div fxFlex="49" fxFlex.xs="100%" fxFlex.sm="25%" class="heding-text">Apps Under Development</div>
+        <div fxLayout="row wrap" style="margin-top: 10px;" fxHide.xs>
+            <div fxFlex="49" fxFlex.xs="30" fxFlex.sm="30" class="heding-text">Apps Under Development</div>
 
-            <div fxFlex="15" fxFlex.xs="100%" fxFlex.sm="25%">
+            <div fxFlex="15" fxFlex.xs="18" fxFlex.sm="20">
                 <button class="app-button" mat-stroked-button>EDIT</button>
             </div>
 
-            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+            <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="15"></div>
 
 
-            <div fxFlex="15" fxFlex.xs="100%" fxFlex.sm="25%">
+            <div fxFlex="15" fxFlex.xs="24" fxFlex.sm="20">
                 <button class="publish-button" mat-stroked-button>PUBLISH</button>
             </div>
-            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
-            <div fxFlex="15" fxFlex.xs="100%" fxFlex.sm="25%">
-                <button class="app-button" mat-stroked-button>ADD</button>
+            <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="2"></div>
+            <div fxFlex="15" fxFlex.xs="18" fxFlex.sm="20">
+                <button class="app-button" mat-stroked-button
+                    [routerLink]="['/manage-app/add-edit-generic-apps']">ADD</button>
             </div>
-            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+            <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="2"></div>
+        </div>
+
+        <div style="margin-top: 5px;" xHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl>
+            <div class="heding-text">Apps Under Development</div>
+
+            <div fxLayout="row wrap" style="margin-top: 5px;">
+
+                <div fxFlex="15" fxFlex.xs="20" fxFlex.sm="20">
+                    <button class="app-button" mat-stroked-button>EDIT</button>
+                </div>
+
+                <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="15"></div>
+
+
+                <div fxFlex="15" fxFlex.xs="24" fxFlex.sm="20">
+                    <button class="publish-button" mat-stroked-button>PUBLISH</button>
+                </div>
+                <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="2"></div>
+                <div fxFlex="15" fxFlex.xs="20" fxFlex.sm="20">
+                    <button class="app-button" mat-stroked-button
+                        [routerLink]="['/manage-app/add-edit-generic-apps']">ADD</button>
+                </div>
+                <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="2"></div>
+            </div>
         </div>
 
         <div class="apps-titles-style">Finance & Accounting Apps :</div>
@@ -40,27 +65,69 @@
     <div class="bottom-line"></div>
 
     <div fxLayout="column" fxLayoutAlign="start" style="margin-top: 20px;">
-        <div fxLayout="row wrap" style="margin-top: 10px;">
-            <div fxFlex="49" fxFlex.xs="100%" fxFlex.sm="25%" class="heding-text">Apps Published for Users</div>
+        <div fxLayout="row wrap" style="margin-top: 10px;" fxHide.xs>
+            <div fxFlex="40" fxFlex.xs="45" fxFlex.sm="45" class="heding-text">Apps Published for Users</div>
 
-            <div fxFlex="15" fxFlex.xs="100%" fxFlex.sm="25%">
-                <button class="app-button" mat-stroked-button>SORT BY</button>
+            <div mat-icon-button fxLayout="column" fxLayoutAlign="start start" fxHide.xs>
+                <mat-form-field style="color: honeydew;font-size: 14px;">
+                    <mat-label style="font-size: 14px;">SORT BY</mat-label>
+                    <mat-select>
+                        <mat-option value="1">App Categories</mat-option>
+                        <mat-option value="2">A to Z</mat-option>
+                    </mat-select>
+                </mat-form-field>
             </div>
 
-            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+            <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="2"></div>
 
-            <div fxFlex="15" fxFlex.xs="100%" fxFlex.sm="25%">
+            <div fxFlex="15" fxFlex.xs="15" fxFlex.sm="18">
                 <button class="app-button" mat-stroked-button>EDIT</button>
             </div>
 
-            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+            <div fxFlex="2" fxFlex.xs="5" fxFlex.sm="5"></div>
 
 
-            <div fxFlex="15" fxFlex.xs="100%" fxFlex.sm="25%">
+            <div fxFlex="15" fxFlex.xs="30" fxFlex.sm="30">
                 <button class="publish-button" mat-stroked-button>UNPUBLISH</button>
             </div>
 
-            <div fxFlex="2" fxFlex.xs="100%" fxFlex.sm="25%"></div>
+            <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="2"></div>
+        </div>
+
+        <!-- mobile -->
+        <div style="margin-top: 10px;" fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl>
+            <div fxLayout="row wrap">
+                <div fxFlex="50" fxFlex.xs="50" fxFlex.sm="50" class="heding-text">Apps Published for Users</div>
+
+              
+            </div>
+            
+            <div fxLayout="row wrap">
+                <div fxFlex="40" fxFlex.xs="43" fxFlex.sm="43">
+                    <div mat-icon-button fxLayout="column" fxLayoutAlign="start start">
+                        <mat-form-field style="color: honeydew;font-size: 14px;width: 80%;">
+                            <mat-label style="font-size: 14px;">SORT BY</mat-label>
+                            <mat-select>
+                                <mat-option value="1">App Categories</mat-option>
+                                <mat-option value="2">A to Z</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div fxFlex="1" fxFlex.xs="1" fxFlex.sm="1"></div>
+
+                <div fxFlex="15" fxFlex.xs="18" fxFlex.sm="18" style="margin-top: 10px;">
+                    <button class="app-button" mat-stroked-button>EDIT</button>
+                </div>
+
+                <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="2"></div>
+
+
+                <div fxFlex="15" fxFlex.xs="28" fxFlex.sm="28" style="margin-top: 10px;">
+                    <button class="publish-button" mat-stroked-button>UNPUBLISH</button>
+                </div>
+            </div>
         </div>
 
         <div class="apps-titles-style">Admin Apps :</div>

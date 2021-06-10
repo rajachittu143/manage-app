@@ -50,6 +50,7 @@ import { CdkTreeModule } from '@angular/cdk/tree';
 
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatTreeModule } from "@angular/material/tree";
 
 @NgModule({
     imports: [
@@ -103,7 +104,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         CdkTableModule,
         TextFieldModule,
         CdkTreeModule,
-
+        MatTreeModule,
         FlexLayoutModule
     ],
     exports: [
@@ -156,7 +157,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         CdkTableModule,
         TextFieldModule,
         CdkTreeModule,
-
+        MatTreeModule,
         FlexLayoutModule
     ]
 })

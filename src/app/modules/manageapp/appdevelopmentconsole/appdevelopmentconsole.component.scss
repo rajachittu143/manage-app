@@ -101,3 +101,80 @@
 .highlightedText {
     background: yellow;
 }
+
+@media only screen and (min-width: 600px) {
+    .side-nav{
+        margin: 20px;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .app-development-title {
+        font-size: 12px;
+      }
+    .side-nav{
+        margin: 20px;
+    }
+}
+
+.side-nav{
+    margin: 0px;
+}
+.toolbar-text {
+    text-align: start;
+    cursor: pointer;
+    width: 225px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    /* opacity: 0.8; */
+  }
+  
+  ::ng-deep .customize {
+    background: #3366FF;
+  }
+
+  .nav-btn{
+    border-radius:20px;
+    background-color: #3366FF;
+    color: #FFFFFF;
+    // width: 85%;
+    margin-left: 10px;
+    line-height: 25px;
+    font-size: 12px;
+  }
+
+  .scroll-container {
+    border: 0px solid silver;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  
+    &.hide-scrollbar {
+      overflow: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  
+    &.show-scroll {
+      overflow: auto;
+    }
+  
+    div {
+      white-space: nowrap;
+      border: 1px solid #efefef;
+      color: #FFFFFF;
+      margin: 0.1rem;
+      padding: .2rem .7rem;
+      &:hover {
+        cursor: pointer;
+        border-color: #ccc;
+        background: gray;
+      }
+    }
+  }

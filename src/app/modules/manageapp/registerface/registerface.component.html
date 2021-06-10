@@ -1,11 +1,11 @@
-<div style="text-align: start; margin-top: 20px;" class="primary-font-family">
-    Hi <a href="" style="color: blue; cursor: pointer;">First Name Last Name</a>, enter all the below listed credentials to be
+<div style="text-align: start; margin-top: 20px;font-weight: 600;" class="primary-font-family">
+    Hi <span href="" style="color: blue; cursor: pointer;">First Name Last Name</span>, enter all the below listed credentials to be
     permitted to login on approval by getbiz.app team:
 </div>
 <form [formGroup]="registrationForm" fxLayoutAlign="center center" (ngSubmit)="register()">
 
     <div fxLayout="row wrap" style="margin-top: 10px; width: 100%;" fxLayoutAlign="center center">
-        <div style="margin-top: 10px; width: 45%;">
+        <div class="form-field-width">
             <div fxLayoutAlign="center center" class="primary-font-family">
                 Face Recognition Login*
             </div>
@@ -13,9 +13,9 @@
                 <img src="../../../../../assets/images/capture.png" alt="" style="height: 260px;width: 260px;">
             </div>
 
-            <div fxLayout="row wrap" style="margin-top: 10px;">
+            <div fxLayout="row wrap">
                 <div fxFlex="49" fxFlex.xs="100%" fxFlex.sm="25%" fxLayoutAlign="center center">
-                    <ngx-intl-tel-input style="margin-top: 22px;" [cssClass]="'custom'" [preferredCountries]="preferredCountries"
+                    <ngx-intl-tel-input class="tel-margin" style="margin-top: 20px;" [cssClass]="'custom'" [preferredCountries]="preferredCountries"
                         [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true"
                         [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.All]"
                         [selectFirstCountry]="true" [selectedCountryISO]="CountryISO.India" type="number" maxLength="15"
@@ -31,10 +31,10 @@
                             placeholder="Enter Your Registered Mobile  number *:" />
                     </mat-form-field> -->
                 </div>
-                <div fxFlex="2"></div>
-                <div fxFlex="49" fxFlex.xs="100%" fxFlex.sm="25%" fxLayoutAlign="center center">
-                    <mat-form-field appearance="outline" style="width: 100%; color: honeydew;margin-top: 10px;"
-                        class="form-field-style primary-font-family">
+                <div fxFlex="10"></div>
+                <div fxFlex="41" fxFlex.xs="100" fxLayoutAlign="center center">
+                    <mat-form-field appearance="outline"  style="color: honeydew;width: 100%;"
+                        class="form-field-style primary-font-family ">
                         <mat-label style="font-size: 14px;">VERIFY VIA</mat-label>
                         <mat-select>
                             <mat-option value="Whatsapp">Whatsapp</mat-option>
@@ -50,7 +50,7 @@
             </div>
 
             <mat-form-field appearance="outline" class="form-field-style primary-font-family"
-                style="margin-top: 10px; width: 100%;">
+                style="width: 100%;">
                 <mat-label>Password</mat-label>
                 <mat-icon matPrefix class="icon-prefix-padding">lock_outline</mat-icon>
                 <input type="password" class="input_style" matInput placeholder="Password" value=""
@@ -73,7 +73,7 @@
                         </mat-error> -->
             </mat-form-field>
 
-            <div style="margin-top: 20px;" fxLayoutAlign="center center">
+            <div style="margin-top: 20px; margin-bottom: 20px;" fxLayoutAlign="center center">
                 <button mat-flat-button class="register-btn primary-font-family">REGISTER</button>
             </div>
 

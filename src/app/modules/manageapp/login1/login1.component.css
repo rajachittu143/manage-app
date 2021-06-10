@@ -1,5 +1,5 @@
 .login-screen-height{
-    height: calc(100vh - 187px);
+    /* height: calc(100vh - 55px); */
     overflow-y: auto;
 }
 
@@ -14,4 +14,30 @@
 .sign-in-btn{
     color: #ffffff;
     background-color: #3366FF;
+    width: 100%;
 }
+
+.snap-container {
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+    text-align: center;
+  }
+  
+  .list-unstyled {
+    list-style: none;
+  }
+  
+  .list-unstyled li {
+    display: inline-block;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
