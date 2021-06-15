@@ -1,0 +1,23 @@
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+
+@Component({
+  selector: 'app-header1',
+  templateUrl: './header1.component.html',
+  styleUrls: ['./header1.component.css']
+})
+export class Header1Component implements OnInit {
+
+  toggleMenu = false;
+
+  constructor() {
+  }
+
+  ngOnInit(): void {
+   
+  }
+  
+  onToggle() {
+    this.toggleMenu = !this.toggleMenu;
+  }
+
+}

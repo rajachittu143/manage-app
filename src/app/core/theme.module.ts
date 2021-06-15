@@ -8,9 +8,10 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { LayoutComponent } from './layout/layout.component';
 import { HeaderDrawerComponent } from './layout/header-drawer/header-drawer.component';
+import { Header1Component } from './layout/header1/header1.component';
 
 const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
-const COMPONENTS = [LayoutComponent, HeaderComponent, FooterComponent,HeaderDrawerComponent];
+const COMPONENTS = [LayoutComponent, HeaderComponent,Header1Component, FooterComponent,HeaderDrawerComponent];
 
 @NgModule({
     imports: [

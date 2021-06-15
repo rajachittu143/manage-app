@@ -4,7 +4,7 @@
             <div fxFlex="49" fxFlex.xs="30" fxFlex.sm="30" class="heding-text">Apps Under Development</div>
 
             <div fxFlex="15" fxFlex.xs="18" fxFlex.sm="20">
-                <button class="app-button" mat-stroked-button>EDIT</button>
+                <button class="app-button" mat-stroked-button [routerLink]="['/manage-app/add-edit-custom-apps']">EDIT</button>
             </div>
 
             <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="15"></div>
@@ -16,7 +16,7 @@
             <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="2"></div>
             <div fxFlex="15" fxFlex.xs="18" fxFlex.sm="20">
                 <button class="app-button" mat-stroked-button
-                    [routerLink]="['/manage-app/add-edit-generic-apps']">ADD</button>
+                    [routerLink]="['/manage-app/add-edit-custom-apps']">ADD</button>
             </div>
             <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="2"></div>
         </div>
@@ -27,7 +27,7 @@
             <div fxLayout="row wrap" style="margin-top: 5px;">
 
                 <div fxFlex="15" fxFlex.xs="20" fxFlex.sm="20">
-                    <button class="app-button" mat-stroked-button>EDIT</button>
+                    <button class="app-button" mat-stroked-button [routerLink]="['/manage-app/add-edit-custom-apps']">EDIT</button>
                 </div>
 
                 <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="15"></div>
@@ -39,7 +39,7 @@
                 <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="2"></div>
                 <div fxFlex="15" fxFlex.xs="20" fxFlex.sm="20">
                     <button class="app-button" mat-stroked-button
-                        [routerLink]="['/manage-app/add-edit-generic-apps']">ADD</button>
+                        [routerLink]="['/manage-app/add-edit-custom-apps']">ADD</button>
                 </div>
                 <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="2"></div>
             </div>

@@ -17,6 +17,19 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AppLoaderComponent } from './shared/services/app-loader/app-loader/app-loader.component';
 import { MatTreeModule } from '@angular/material/tree';
+import { DropzoneModule } from 'ngx-dropzone-wrapper';
+import { DROPZONE_CONFIG } from 'ngx-dropzone-wrapper';
+import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
+import { NgImageSliderModule } from 'ng-image-slider';
+
+const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
+  // Change this to your upload POST address:
+  url: 'https://httpbin.org/post',
+  maxFilesize: 5,
+  acceptedFiles: '.docx,.pdf,.mp4,.mkv,.avi,image/jpeg,image/jpg,image/png',
+  addRemoveLinks: true,
+  createImageThumbnails: true
+};
 
 @NgModule({
   declarations: [
@@ -37,6 +50,8 @@ import { MatTreeModule } from '@angular/material/tree';
     ReactiveFormsModule,
     ThemeModule,
     MatTreeModule,
+    DropzoneModule,
+    NgImageSliderModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
@@ -44,7 +59,11 @@ import { MatTreeModule } from '@angular/material/tree';
       registrationStrategy: 'registerWhenStable:30000'
     }),
   ],
-  providers: [TitleserviceService],
+  providers: [TitleserviceService,
+    {
+      provide: DROPZONE_CONFIG,
+      useValue: DEFAULT_DROPZONE_CONFIG
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -51,6 +51,8 @@ import { CdkTreeModule } from '@angular/cdk/tree';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTreeModule } from "@angular/material/tree";
+import { DropzoneModule } from "ngx-dropzone-wrapper";
+import { NgImageSliderModule } from "ng-image-slider";
 
 @NgModule({
     imports: [
@@ -105,7 +107,9 @@ import { MatTreeModule } from "@angular/material/tree";
         TextFieldModule,
         CdkTreeModule,
         MatTreeModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        DropzoneModule,
+        NgImageSliderModule
     ],
     exports: [
         MatSidenavModule,
@@ -158,7 +162,8 @@ import { MatTreeModule } from "@angular/material/tree";
         TextFieldModule,
         CdkTreeModule,
         MatTreeModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        DropzoneModule
     ]
 })
 

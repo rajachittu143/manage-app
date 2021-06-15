@@ -34,7 +34,16 @@
 
 
 @media only screen and (min-width: 600px) {
-    
+    /* .login-screen-height{
+        height: 50%;
+        overflow-y: auto;
+        border-right: 0px solid white;
+      }
+
+      .login-right-side-title{
+        width: 100%;
+        margin-right: 10px;
+    } */
 }
 
 @media only screen and (max-width: 599px) {

@@ -1,0 +1,68 @@
+@import '../../../../../../styles.css';
+
+.app-btn{
+    border-radius:20px;
+   background-color: #3366FF;
+   color: #FFFFFF;
+   width: 100%;
+   font-size: 16px;
+   line-height: 22px;
+  }
+
+  .alignment .mat-form-field-outline-start,
+  .alignment .mat-form-field-outline-end {
+      border-radius: 20px !important;
+  }
+
+  .input_style {
+    margin-left: 8px;
+}
+.form-field-style {
+    margin-bottom: -1.25em !important;
+    font-size: 14px;
+    width: 100%;
+}
+
+.key-text {
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #3E3E3E;
+    align-self: center;
+    margin-top: 12px;
+    margin-bottom: 16px;
+}
+
+  .heding-text{
+    font-size: 15px;
+    margin-top: 5px;
+    font-style: normal;
+    font-weight: 550;
+    font-family: Roboto;
+    padding: 0px !important;
+  }
+
+  .btn-float-right{
+    top: auto;
+    right: 20px;
+    bottom: 20px;
+    /* position: absolute; */
+}
+
+.new-getster-btn{
+  color: #ffffff;
+  background-color: #3366FF;
+}
+
+.comments-text{
+  margin-top: 10px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    font-family: Roboto;
+}
+   
+.dropzone-container {
+  height: 100%;
+}
