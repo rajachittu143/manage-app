@@ -1,8 +1,8 @@
 @import "../../../../../styles.css";
 
 .getster-category-screen-height{
-    height: calc(100vh - 187px);
-    overflow-y: auto;
+    /* height: calc(100vh - 187px);
+    overflow-y: auto; */
     border-right: 2px solid gray;
 }
 

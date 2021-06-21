@@ -36,9 +36,18 @@ import { AddEditGetstersAppsComponent } from './appdevelopmentconsole/appsforget
 import { AuditBusinessCountriesComponent } from './appdevelopmentconsole/audit-trail/audit-business-countries/audit-business-countries.component';
 import { MenuAppdevelopmentConsoleComponent } from './appdevelopmentconsole/menu-appdevelopment-console/menu-appdevelopment-console.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-
+import { AddNodeComponent, NewNodeDialog } from 'src/app/shared/components/master-category/add-node/add-node.component';
+import { EditNodeComponent, EditNodeDialog } from 'src/app/shared/components/master-category/edit-node/edit-node.component';
+import { DeleteNodeComponent } from 'src/app/shared/components/master-category/delete-node/delete-node.component';
+import { ReassignCategoryComponent } from './getster-category-admin/reassign-category/reassign-category.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReasonBusinessCategoryComponent } from './appdevelopmentconsole/appsforusers/businesscategories/reason-business-category/reason-business-category.component';
 
 @NgModule({
+  entryComponents: [
+    NewNodeDialog,
+    EditNodeDialog
+  ],
   declarations: [
     ManageappRoutingModule.components,
     Login1Component,
@@ -69,6 +78,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     AddEditGetstersAppsComponent,
     AuditBusinessCountriesComponent,
     MenuAppdevelopmentConsoleComponent,
+
+    AddNodeComponent,
+    NewNodeDialog,
+    EditNodeComponent,
+    EditNodeDialog,
+    DeleteNodeComponent,
+    ReassignCategoryComponent,
+    ReasonBusinessCategoryComponent,
     
   ],
   imports: [
@@ -81,6 +98,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     FlexLayoutModule,
     MatSidenavModule,
     NgxIntlTelInputModule,
+    HttpClientModule
   ],
   providers:[],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

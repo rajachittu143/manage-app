@@ -1,0 +1,71 @@
+<div>
+    <div class="title-txt">
+        You cannot delete a category/sub category, if there are users already registered under that category. Please
+        reassign the registered users to a new category, if you propose to delete the category. Once there are no users
+        registered under that category, press the back button and try deleting the category again.
+    </div>
+    <div fxLayout="row wrap" style="margin-top: 10px;">
+        <div fxFlex="10" fxFlex.xs="100" fxFlex.sm="100">
+        </div>
+        <div fxFlex="60" fxFlex.xs="100" fxFlex.sm="100">
+            <div class="mat-elevation-z8" style="margin: 24px;">
+                <table mat-table [dataSource]="dataSource">
+
+                    <!-- Checkbox Column -->
+                    <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <mat-checkbox (change)="$event ? masterToggle() : null"
+                                [checked]="selection.hasValue() && isAllSelected()"
+                                [indeterminate]="selection.hasValue() && !isAllSelected()">
+                            </mat-checkbox>
+                        </th>
+                        <td mat-cell *matCellDef="let row">
+                            <mat-checkbox (click)="$event.stopPropagation()"
+                                (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+                            </mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef>Name</th>
+                        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    </ng-container>
+
+                    <!-- Getster ID -->
+                    <ng-container matColumnDef="getsterid">
+                        <th mat-header-cell *matHeaderCellDef >Getster ID</th>
+                        <td mat-cell *matCellDef="let element"> {{element.getsterid}} </td>
+                    </ng-container>
+
+                    <!--   Select User Category -->
+                    <ng-container matColumnDef="usercategory">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <mat-form-field appearance="outline" style="width: 60%; color: honeydew;margin-top: 10px;"
+                                class="form-field-style primary-font-family">
+                                <mat-label style="font-size: 14px;">Select User Category</mat-label>
+                                <mat-select>
+                                    <mat-option value="Yes">Supplier</mat-option>
+                                    <mat-option value="No">Supplier1</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.usercategory}} </td>
+                    </ng-container>
+
+
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+                    </tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+        </div>
+        <div fxFlex="30" fxFlex.xs="100" fxFlex.sm="100">
+            <div fxLayoutAlign="center center" style="margin-top: 20px;  margin-bottom: 20px;">
+                <button mat-flat-button class="register-getster-btn">SAVE</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -7,7 +7,8 @@ import { environment } from '../../../environments/environment';
 export class ApiPrefixInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // req = req.clone({ url: 'https://dev-gcp-kong.dltk.ai/' + req.url });
-        req = req.clone({ url: environment.host + req.url });
+        // req = req.clone({ url: environment.host + req.url });
+        req = req.clone({ url: '' + req.url });
         return next.handle(req);
     }
 }

@@ -1,0 +1,141 @@
+<div>
+    <div fxLayout="row wrap" style="margin-top: 10px;">
+        <div fxFlex="90" fxFlex.xs="100" fxFlex.sm="100">
+            <div class="title-txt">
+                You cannot delete a business category/sub category, if there are apps and businesses already registered
+                under
+                that category. Please reassign the user apps and registered business names to a new category, if you
+                propose to
+                delete the business category. Once there are no users registered under that business category, press the
+                back
+                button and try deleting the category again.
+            </div>
+        </div>
+        <div fxFlex="10" fxFlex.xs="100" fxFlex.sm="100">
+            <div fxLayoutAlign="center center" style="margin-top: 20px;  margin-bottom: 20px;">
+                <button mat-flat-button class="register-getster-btn">SAVE CHANGES</button>
+            </div>
+        </div>
+    </div>
+
+    <div fxLayout="row wrap" style="margin-top: 10px;">
+        <div fxFlex="3" fxFlex.xs="100" fxFlex.sm="100">
+        </div>
+        <div fxFlex="45" fxFlex.xs="100" fxFlex.sm="100">
+            <div class="mat-elevation-z8" style="margin: 24px;">
+                <table mat-table [dataSource]="dataSource">
+
+                    <!-- Checkbox Column -->
+                    <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <mat-checkbox (change)="$event ? masterToggle() : null"
+                                [checked]="selection.hasValue() && isAllSelected()"
+                                [indeterminate]="selection.hasValue() && !isAllSelected()">
+                            </mat-checkbox>
+                        </th>
+                        <td mat-cell *matCellDef="let row">
+                            <mat-checkbox (click)="$event.stopPropagation()"
+                                (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+                            </mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="appname">
+                        <th mat-header-cell *matHeaderCellDef>App Name</th>
+                        <td mat-cell *matCellDef="let element"> {{element.appname}} </td>
+                    </ng-container>
+
+                    <!-- Getster ID -->
+                    <ng-container matColumnDef="appid">
+                        <th mat-header-cell *matHeaderCellDef>App ID</th>
+                        <td mat-cell *matCellDef="let element"> {{element.appid}} </td>
+                    </ng-container>
+
+                    <!--   Select User Category -->
+                    <ng-container matColumnDef="bizcategory">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <mat-form-field appearance="outline" style="width: 60%; color: honeydew;margin-top: 10px;"
+                                class="form-field-style primary-font-family">
+                                <mat-label style="font-size: 14px;">Reassign BIz Category</mat-label>
+                                <mat-select>
+                                    <mat-option value="Yes">Corrugated Packaging</mat-option>
+                                    <mat-option value="No">Corrugated Packaging</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.bizcategory}} </td>
+                    </ng-container>
+
+
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+                    </tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+        </div>
+        <div fxFlex="3" fxFlex.xs="100" fxFlex.sm="100">
+        </div>
+        <div fxFlex="45" fxFlex.xs="90" fxFlex.sm="90">
+            <div class="mat-elevation-z8" style="margin: 24px; width: 100%;">
+                <table mat-table [dataSource]="dataSource">
+
+                    <!-- Checkbox Column -->
+                    <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <mat-checkbox (change)="$event ? masterToggle() : null"
+                                [checked]="selection.hasValue() && isAllSelected()"
+                                [indeterminate]="selection.hasValue() && !isAllSelected()">
+                            </mat-checkbox>
+                        </th>
+                        <td mat-cell *matCellDef="let row">
+                            <mat-checkbox (click)="$event.stopPropagation()"
+                                (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+                            </mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="appname">
+                        <th mat-header-cell *matHeaderCellDef>App Name</th>
+                        <td mat-cell *matCellDef="let element"> {{element.appname}} </td>
+                    </ng-container>
+
+                    <!-- Getster ID -->
+                    <ng-container matColumnDef="appid">
+                        <th mat-header-cell *matHeaderCellDef>App ID</th>
+                        <td mat-cell *matCellDef="let element"> {{element.appid}} </td>
+                    </ng-container>
+
+                    <!--   Select User Category -->
+                    <ng-container matColumnDef="bizcategory">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <mat-form-field appearance="outline" style="width: 60%; color: honeydew;margin-top: 10px;"
+                                class="form-field-style primary-font-family">
+                                <mat-label style="font-size: 14px;">Reassign BIz Category</mat-label>
+                                <mat-select>
+                                    <mat-option value="Yes">Corrugated Packaging</mat-option>
+                                    <mat-option value="No">Corrugated Packaging</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.bizcategory}} </td>
+                    </ng-container>
+
+
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+                    </tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+        </div>
+        <div fxFlex="4" fxFlex.xs="100" fxFlex.sm="100">
+        </div>
+    </div>
+
+  
+</div>

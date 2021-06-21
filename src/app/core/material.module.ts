@@ -22,7 +22,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatRadioModule } from '@angular/material/radio';
-import { MatRippleModule } from '@angular/material/core';
+import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -53,6 +53,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTreeModule } from "@angular/material/tree";
 import { DropzoneModule } from "ngx-dropzone-wrapper";
 import { NgImageSliderModule } from "ng-image-slider";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
     imports: [
@@ -112,6 +113,7 @@ import { NgImageSliderModule } from "ng-image-slider";
         NgImageSliderModule
     ],
     exports: [
+        
         MatSidenavModule,
         MatToolbarModule,
         MatIconModule,
@@ -163,7 +165,8 @@ import { NgImageSliderModule } from "ng-image-slider";
         CdkTreeModule,
         MatTreeModule,
         FlexLayoutModule,
-        DropzoneModule
+        DropzoneModule,
+        MatNativeDateModule,
     ]
 })
 

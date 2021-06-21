@@ -1,8 +1,8 @@
 @import "../../../../styles.css";
 
 .login-screen-height{
-    height: calc(100vh - 187px);
-    overflow-y: auto;
+    /* height: calc(100vh - 187px);
+    overflow-y: auto; */
     border-right: 2px solid gray;
 }
 
@@ -31,6 +31,12 @@
     background-color: #3366FF;
 }
 
+.cam-size{
+    height: 240px;
+    width: 240px; 
+    cursor: pointer;
+}
+
 
 
 @media only screen and (min-width: 600px) {
@@ -48,10 +54,41 @@
 
 @media only screen and (max-width: 599px) {
     .login-screen-height{
-        height: calc(100vh - 442px);
-        overflow-y: auto;
         border-right: 0px solid white;
       }
+
+      .cam-size{
+        height: 210px;
+        width: 220px; 
+        cursor: pointer;
+    }
+    
+
+      .login-right-side-title{
+        width: 100%;
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .login-screen-height{
+        border-right: 0px solid white;
+      }
+
+      .cam-size{
+        height: 170px;
+        width: 170px; 
+        cursor: pointer;
+    }
+    
+
+    .login-left-side-text-style{
+        align-items: center;  text-align: center;
+        font-weight: 550;
+        color: #9A9A9A;
+        font-size: 12px;
+        font-family: Roboto;
+    }
 
       .login-right-side-title{
         width: 100%;

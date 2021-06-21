@@ -4,7 +4,7 @@ import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-getster-access-control',
   templateUrl: './getster-access-control.component.html',
-  styleUrls: ['./getster-access-control.component.css']
+  styleUrls: ['./getster-access-control.component.scss']
 })
 export class GetsterAccessControlComponent implements OnInit {
 
@@ -15,6 +15,22 @@ export class GetsterAccessControlComponent implements OnInit {
 
   ngOnInit(): void {
   
+  }
+
+  btnNewGetster(){
+    this.tabName = "NewGetster";
+  }
+
+  btnExistingGetster(){
+    this.tabName = "ExistingGetster";
+  }
+
+  btnBlockedGetster(){
+    this.tabName = "BlockedGetster";
+  }
+
+  btnGetsterProfile(){
+    this.tabName = "GetsterProfile";
   }
 
   onSubmit(event:any) {

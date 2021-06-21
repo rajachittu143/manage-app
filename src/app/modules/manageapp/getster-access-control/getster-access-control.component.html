@@ -1,6 +1,12 @@
 <form [formGroup]="getsterAccessControlForm" (ngSubmit)="onSubmit($event)">
     <div style="margin-top: 10px;">
-        <div fxLayout="row wrap">
+        <div class="scroll-container" style="overflow: auto" fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl>
+            <div class="nav-btn" mat-stroked-button (click)="btnNewGetster()">New Getster</div>
+            <div class="nav-btn" mat-stroked-button (click)="btnExistingGetster()">Existing Getster</div>
+            <div class="nav-btn" mat-stroked-button (click)="btnBlockedGetster()">Blocked Getster</div>
+            <div class="nav-btn" mat-stroked-button (click)="btnGetsterProfile()">Getster Profile / Login Reset</div>
+            </div>
+        <div fxLayout="row wrap" fxHide.xs>
             <div fxFlex="100" fxFlex.gt-xs="17" style="width: 100%;">
                 <div style="padding:10px">
                     <button class="app-development-btn" mat-stroked-button type="submit" name="NewGetster"
