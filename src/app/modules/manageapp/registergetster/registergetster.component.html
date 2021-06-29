@@ -5,25 +5,28 @@
             <div style="color: blue;">User Registration for GETSTER - Restricted Access
             </div>
 
-            <form [formGroup]="registerGetsterForm" (ngSubmit)="registerGetster()" style="width: 100%;">
+            <form [formGroup]="registerGetsterForm1" style="width: 100%;">
                 <div class="form-field-width">
                     <mat-form-field appearance="outline" class="form-field-style"
                         style="margin-top: 10px; width: 100%;">
                         <mat-label>First Name</mat-label>
-                        <input type="text" class="input_style" matInput placeholder="First Name" />
+                        <input formControlName="firstname" type="text" class="input_style" matInput placeholder="First Name" />
+                        <mat-error *ngIf="registerGetsterForm1.controls['firstname'].hasError('required')">
+                            First Name is required!
+                        </mat-error>
                     </mat-form-field>
 
                     <mat-form-field appearance="outline" class="form-field-style"
-                        style="margin-top: 10px; width: 100%;">
+                        style="margin-top: 20px; width: 100%;">
                         <mat-label>Last Name</mat-label>
-                        <input type="text" class="input_style" matInput placeholder="Last Name" />
-
+                        <input formControlName="lastname" type="text" class="input_style" matInput placeholder="Last Name" />
+                        <mat-error *ngIf="registerGetsterForm1.controls['lastname'].hasError('required')">
+                            Last Name is required!
+                        </mat-error>
                     </mat-form-field>
-
-
                 </div>
             </form>
-            <div style="color: gray; margin-top: 10px;">Select the categories that best describes your relationship with
+            <div style="color: gray; margin-top: 20px;">Select the categories that best describes your relationship with
                 <!-- <span style="margin-top: 10px;"> -->
                     <span style="color: blue; font-weight: 600;">get</span>biz.<span style="color: blue; font-weight: 600">app</span>
                 
@@ -61,7 +64,6 @@
                 </mat-tree>
             </div>
         </div>
-
     </div>
 
     <div fxFlex="50" fxFlex.xs="100%" fxFlex.sm="33%" fxLayoutAlign="center center">
@@ -75,16 +77,10 @@
             <div style="padding-top: 10px;text-align: center;">
                 <img src="../../../../../assets/icons/getbizapp.png" alt="Audits">
             </div>
-
-
         </div>
-
-
     </div>
-
 </div>
 <!-- <button mat-flat-button class="btn-float-right register-getster-btn" (click)="registerGetster()">Next</button> -->
 
-<button mat-flat-button class="btn-float-right register-getster-btn" (click)="registerGetster()"
-    [routerLink]="['/manage-app/register-face']">Next
+<button [disabled]="registerGetsterForm1.invalid" (click)="onNextReg()" mat-flat-button class="btn-float-right register-getster-btn">Next
 </button>

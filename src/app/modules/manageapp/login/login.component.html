@@ -25,19 +25,11 @@
             </div>
         </div>
         <form #f="ngForm" [formGroup]="signinForm" fxLayoutAlign="center center" alt="Audits">
-            <div class="login-right-side-title">
+            <div class="login-right-side-title" >
                 <div fxLayoutAlign="center center" style="margin-top: 10px;margin-left: 20px;font-size: 18px;">or</div>
 
-                <!-- <mat-form-field appearance="outline" class="form-field-style"
-                    style="margin-top: 10px;margin-left: 10px; width: 100%;">
-                    <mat-label style="padding-left: -5px;">Enter Your Registered Mobile number *:</mat-label>
-                    <mat-icon matPrefix class="icon-prefix-padding">smartphone</mat-icon>
-                    <input matInput type="tel" class="input_style primary-font-family"
-                        placeholder="Enter Your Registered Mobile  number *:" />
-                    
-                </mat-form-field> -->
 
-                <div class="wrapper" style="margin-top: 10px;">
+                <div class="wrapper form-field-style" style="margin-top: 10px;" fxLayoutAlign="center center">
                     <ngx-intl-tel-input [cssClass]="'custom'" [preferredCountries]="preferredCountries"
                         [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true"
                         [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.All]"
@@ -47,25 +39,27 @@
                     </ngx-intl-tel-input>
                 </div>
 
-                <mat-form-field appearance="outline" class="form-field-style" style="margin-top: 5px; width: 100%;">
+                <mat-form-field appearance="outline" class="form-field-style" style="margin-top: 5px;"
+                    fxLayoutAlign="center center">
                     <mat-label>Password</mat-label>
                     <mat-icon matPrefix class="icon-prefix-padding">lock_outline</mat-icon>
                     <input type="password" class="input_style primary-font-family" matInput placeholder="Password"
-                        value="" [type]="hide ? 'text' : 'password'" />
+                        value="" [type]="hide ? 'text' : 'password'" formControlName="password" required />
                     <icon style="cursor: pointer;" mat-icon-button matSuffix (click)="hide = !hide">
                         <mat-icon>{{ hide ? "visibility" : "visibility_off" }}</mat-icon>
                     </icon>
-                    <!-- <mat-error *ngIf="signinForm.controls['password'].hasError('required') && signinForm.controls['password'].touched">
-                            Password is required!
-                        </mat-error> -->
+                    <mat-error *ngIf="signinForm.controls['password'].hasError('required')">
+                        Password is required!
+                    </mat-error>
                 </mat-form-field>
 
                 <div style="margin-top: 10px;" fxLayoutAlign="center center">
-                    <button mat-flat-button class="sign-in-btn primary-font-family"
-                        [routerLink]="['/manage-app/manageapphome']">LOG IN</button>
+                    <button [disabled]="signinForm.invalid" (click)="signin()" mat-flat-button
+                        class="sign-in-btn primary-font-family">LOG IN</button>
+                    <!-- [routerLink]="['/manage-app/manageapphome']" (click) = "signin()"-->
                 </div>
-                <div style="margin-top: 10px;" fxLayoutAlign="center center" >
-                    <div (click)="forgetPasswordDialog()"  class="primary-font-family"
+                <div style="margin-top: 10px;" fxLayoutAlign="center center">
+                    <div (click)="forgetPasswordDialog()" class="primary-font-family"
                         style="color: #3366FF; cursor: pointer;" href="If you forgot your password, Click here.">If you
                         forgot your password, Click here.</div>
                 </div>
@@ -74,7 +68,7 @@
                 </div>
                 <div style="margin-top: 10px; margin-bottom: 20px;" fxLayoutAlign="center center">
                     <button mat-flat-button class="sign-in-btn primary-font-family"
-                        [routerLink]="['/manage-app/register-getster']">REGISTER</button>
+                        [routerLink]="['/manage-app/register-getster']" translate>Register</button>
                 </div>
             </div>
         </form>

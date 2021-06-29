@@ -46,17 +46,28 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
 import { CdkTableModule } from '@angular/cdk/table';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { CdkTreeModule } from '@angular/cdk/tree';
-
-
+import { CustomFormsModule } from 'ngx-custom-validators';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTreeModule } from "@angular/material/tree";
 import { DropzoneModule } from "ngx-dropzone-wrapper";
 import { NgImageSliderModule } from "ng-image-slider";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+import { HttpClient } from "@angular/common/http";
+
+
+import { TranslateHttpLoader } from '@ngx-translate/http-loader'
+import { NgxYoutubePlayerModule } from "ngx-youtube-player";
+
+export function translateHttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http,'./assets/i18n/', '.json');
+}
 
 @NgModule({
     imports: [
+        NgxYoutubePlayerModule.forRoot(),
+        CustomFormsModule,
         MatSidenavModule,
         MatToolbarModule,
         MatIconModule,
@@ -110,10 +121,17 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
         MatTreeModule,
         FlexLayoutModule,
         DropzoneModule,
-        NgImageSliderModule
+        NgImageSliderModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: translateHttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        })
     ],
     exports: [
-        
+        TranslateModule,
         MatSidenavModule,
         MatToolbarModule,
         MatIconModule,

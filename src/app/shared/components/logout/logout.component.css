@@ -1,0 +1,6 @@
+@import "../../../../styles.css";
+
+.logout-btn{
+    color: #ffffff;
+    background-color: #3366FF;
+}

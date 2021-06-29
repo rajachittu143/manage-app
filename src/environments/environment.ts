@@ -1,10 +1,10 @@
 export const environment = {
-  production: false,
+  production: true,
   baseHref: '/',
-  host: 'https://api.getbiz.app/api/',
+  host: 'http://api.getbiz.app/api/',
 
   insertMaster: 'getstermaster',
-  // signup: 'register',
+  signin: 'login',
   // user: 'user/initialize',
   // changePassword: 'user/changePassword',
 };

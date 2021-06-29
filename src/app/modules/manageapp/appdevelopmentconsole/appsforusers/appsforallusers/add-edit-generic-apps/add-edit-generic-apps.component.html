@@ -262,7 +262,12 @@
         <div fxLayout="row wrap" style="margin-top: 10px;">
             <div fxFlex="5" fxFlex.xs="5" fxFlex.sm="5"></div>
             <div fxFlex="20" fxFlex.xs="100" fxFlex.sm="100" fxLayoutAlign="center center">
-                <img fxLayoutAlign="center center" src="../../../../../../../assets/images/mobile.png" alt="Audits">
+                <div style="position: relative; left: 0; top: 0;">
+
+                    <img class="img1" fxLayoutAlign="center center" src="../../../../../../../assets/images/mobile.png"
+                        alt="Audits">
+                    <img class="img2" [src]="croppedImage" />
+                </div>
             </div>
             <div fxFlex="30" fxFlex.xs="100" fxFlex.sm="100" style="align-self: center; text-align: center; ">
                 <div>
@@ -288,8 +293,20 @@
                 </div>
             </div>
             <div fxFlex="45" fxFlex.xs="100" fxFlex.sm="100" fxLayoutAlign="end end">
-                <img class="lap-size" fxLayoutAlign="center center" src="../../../../../../../assets/images/desktop.png"
-                    alt="Audits">
+
+
+                <div style="position: relative; left: 0; top: 0;">
+                    <img class="lap-size img3" fxLayoutAlign="center center"
+                        src="../../../../../../../assets/images/desktop.png" alt="Audits">
+
+                    <image-cropper class="img4" [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true"
+                        [aspectRatio]="2 / 4" [resizeToWidth]="128" format="png" (imageCropped)="imageCropped($event)"
+                        (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady()"
+                        (loadImageFailed)="loadImageFailed()">
+                    </image-cropper>
+                    <input type="file" (change)="fileChangeEvent($event)"
+                        style="position: relative; left: 210px;; top: 0;" />
+                </div>
             </div>
         </div>
     </div>
@@ -299,16 +316,25 @@
             <div fxFlex="48" fxFlex.xs="100%" fxFlex.sm="48">
                 <div fxLayoutAlign="start center" class="heding-text">About This App:</div>
                 <div fxLayoutAlign="center center">
-                    <textarea cols="70" style="height: 200px; width: 100%;">
-                    </textarea>
+                    <!-- <textarea cols="70" style="height: 200px; width: 100%;">
+                    </textarea> -->
+
+                    <youtube-player
+                    [videoId]="id"
+                    (ready)="savePlayer($event)"
+                    (change)="onStateChange($event)">
+                  </youtube-player>
+                  
                 </div>
             </div>
             <div fxFlex="4" fxFlex.xs="100%" fxFlex.sm="4"></div>
             <div fxFlex="48" fxFlex.xs="100%" fxFlex.sm="48">
                 <div fxLayoutAlign="start center" class="heding-text">Time Stamp of the Video:</div>
                 <div fxLayoutAlign="center center">
-                    <textarea cols="70" style="height: 200px; width: 100%;">
-                    </textarea>
+                    <!-- <textarea cols="70" style="height: 200px; width: 100%;">
+                    </textarea> -->
+                    <div style="cursor: pointer;" (click)="onTimestamp('t1nFAMws5FI&t=0s')">(0:00:00) 1: Introduction</div>
+                    <div style="cursor: pointer;" (click)="onTimestamp('t1nFAMws5FI&t=128s')">(0:01:24) 2: Setting up project using Angular CLI</div>
                 </div>
 
             </div>

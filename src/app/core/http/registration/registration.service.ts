@@ -8,11 +8,11 @@ import { environment } from 'src/environments/environment';
 })
 export class RegistrationService {
 
-  
+
   constructor(private http: HttpClient) { }
 
-  insertMaster(body:any): Observable<any> {
-    return this.http.post<any>(``, body);
+  insertMaster(body: any): Observable<any> {
+    return this.http.post<any>(`login/userregistration`, body);
   }
 
 }

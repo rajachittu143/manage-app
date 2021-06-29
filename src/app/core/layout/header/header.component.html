@@ -1,9 +1,10 @@
 <div class="mp-header">
     <mat-toolbar color="primary" [ngClass]="toggleMenu ? 'angular-material-toolbar' : 'material-toolbar'">
-        <div>
+        <div *ngIf="loginPage == 1">
             <!-- <mat-icon [ngStyle]="{'color':'white','margin-top':'7px','margin-right':'4px'}">keyboard_arrow_left</mat-icon> -->
-            <img  style="margin-top: 8px; margin-right: 8px; height: 25px;width: 25px;" src="../../../../assets/icons/back.png"
-            alt="Audits set-up in Chrome DevTools">
+            <img (click)="onBackPress()"
+                style="margin-top: 8px; margin-right: 8px; height: 25px;width: 25px; cursor: pointer;"
+                src="../../../../assets/icons/back.png" alt="Audits set-up in Chrome DevTools">
         </div>
 
         <div>
@@ -17,7 +18,7 @@
 
         <span class="spacer"></span>
         <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center" class="icon-img">
-            <img style="margin-left: 10px; width: 20px;height: 20px; cursor: pointer;"
+            <img style="margin-left: 10px; width: 20px;height: 20px; cursor: pointer;" (click)="onShare()"
                 src="../../../../assets/icons/share.png" alt="Audits set-up in Chrome DevTools">
         </div>
         <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center">
@@ -32,31 +33,36 @@
             <mat-form-field style="color: honeydew;font-size: 14px;">
                 <mat-label style="font-size: 14px;">Select Language</mat-label>
                 <mat-select>
-                    <mat-option value="English">English</mat-option>
-                    <mat-option value="Tamil">Tamil</mat-option>
-                    <mat-option value="Hindi">Hindi</mat-option>
+                    <mat-option (click)="switchLanguage('english')" value="English">English</mat-option>
+                    <mat-option (click)="switchLanguage('hindi')" value="Hindi">Hindi</mat-option>
+                    <mat-option (click)="switchLanguage('chinese')" value="Chinese">Chinese</mat-option>
+                    <mat-option (click)="switchLanguage('french')" value="French">French</mat-option>
+                    <mat-option (click)="switchLanguage('spanish')" value="Spanish">Spanish</mat-option>
+                    <mat-option (click)="switchLanguage('german')" value="German">German</mat-option>
                 </mat-select>
             </mat-form-field>
         </div>
-        <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center">
-            <div [matMenuTriggerFor]="accountMenu">
+        <div fxHide.xs mat-icon-button fxLayout="column" fxLayoutAlign="center center" style="margin-left: 20px;">
+            <div *ngIf="loginPage == 1" [matMenuTriggerFor]="accountMenu">
                 <img src="assets/icons/profile_icon.png"
                     style="width: 55px;height: 55px; margin-top: 27px;cursor: pointer;"
                     alt="Audits set-up in Chrome DevTools" />
             </div>
-            <mat-menu #accountMenu="matMenu">
-                <button mat-menu-item>
-                    <mat-icon>settings</mat-icon>
-                    <span>Profile</span>
-                </button>
+            <div>
+                <mat-menu #accountMenu="matMenu">
+                    <button mat-menu-item>
+                        <mat-icon>settings</mat-icon>
+                        <span>Profile</span>
+                    </button>
 
-                <button mat-menu-item>
-                    <mat-icon>exit_to_app</mat-icon>
-                    <span>Sign Out</span>
-                </button>
-            </mat-menu>
+                    <button mat-menu-item (click)="logOut()">
+                        <mat-icon>exit_to_app</mat-icon>
+                        <span>Sign Out</span>
+                    </button>
+                </mat-menu>
+            </div>
         </div>
-        <div fxLayout="row" style="width: 100%;" fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl>
+        <div *ngIf="loginPage == 1"  fxLayout="row" style="width: 100%;" fxHide.gt fxHide.sm fxHide.md fxHide.lg fxHide.xl>
             <div fxLayoutAlign="end end" style="width: 100%;">
                 <button mat-icon-button [matMenuTriggerFor]="menu" fxLayoutAlign="end end">
                     <mat-icon>more_vert</mat-icon>

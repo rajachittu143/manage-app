@@ -1,0 +1,42 @@
+<div>
+    <div fxLayout="row wrap" style="margin-top: 10px; margin-bottom: 20px;">
+        <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="2"></div>
+        <div fxFlex="25" fxFlex.xs="98" fxFlex.sm="98">
+            <div style="position: relative; left: 0; top: 0;" fxLayoutAlign="center center">
+                <img class="img1" fxLayoutAlign="center center" src="../../../../../../assets/images/mobile.png"
+                    alt="Audits">
+                <img class="img2" [src]="croppedImage" />
+            </div>
+            <div style="margin-top: 20px; text-align: center;">Mobile View</div>
+        </div>
+        <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="2"></div>
+        <div fxLayout="column" fxFlex="30" fxFlex.xs="98" fxFlex.sm="98" fxLayoutAlign="center center">
+            <div class="title">Pan and zoom the rectangle on<br> right side to change the image<br> size and preview in
+                the
+                mobile.</div>
+            <div style="margin-top: 10px; font-size: 16px;">Choose Default Text Colour</div>
+            <div style="margin-top: 20px;font-size: 12px;">APP names and other text</div>
+        </div>
+        <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="2"></div>
+        <div fxFlex="37" fxFlex.xs="98" fxFlex.sm="98">
+            <div style="position: relative; left: 0; top: 0;">
+                <img class="lap-size img3" fxLayoutAlign="center center"
+                    src="../../../../../../assets/images/desktop.png" alt="Audits">
+
+                <image-cropper class="img4" [imageBase64]="imageChangedEvent" [maintainAspectRatio]="true"
+                    [aspectRatio]="2 / 4" [resizeToWidth]="128" format="png" (imageCropped)="imageCropped($event)"
+                    (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()">
+                </image-cropper>
+                <input type="file" (change)="fileChangeEvent($event)"
+                    style="position: relative; left: 167px;; top: 0;" />
+            </div>
+            <div style="text-align: center;margin-top: 20px;">Desktop View</div>
+        </div>
+        <div fxFlex="2" fxFlex.xs="2" fxFlex.sm="2"></div>
+    </div>
+    <div style="margin-bottom: 20px;">
+        <ng-image-slider #nav [images]="imageObject" [infinite]="false" [autoSlide]="1" [imagePopup]="false"
+            (imageClick)="imageOnClick($event)" [imageSize]="{width: '10%', height: 100}" slideImage="1">
+        </ng-image-slider>
+    </div>
+</div>

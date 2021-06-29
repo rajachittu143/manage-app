@@ -22,6 +22,12 @@ import { DROPZONE_CONFIG } from 'ngx-dropzone-wrapper';
 import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { DialogBoxComponent } from './shared/components/country/dialog-box/dialog-box.component';
+import { ImageCropperModule } from 'ngx-image-cropper';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { translateHttpLoaderFactory } from './core/material.module';
+import { HttpClient } from '@angular/common/http';
+import { LogoutComponent } from './shared/components/logout/logout.component';
+
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   // Change this to your upload POST address:
@@ -38,6 +44,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     ForgetPasswordComponent,
     AppLoaderComponent,
     DialogBoxComponent,
+    LogoutComponent,
   ],
   imports: [
     MatSidenavModule,
@@ -54,6 +61,15 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     MatTreeModule,
     DropzoneModule,
     NgImageSliderModule,
+    ImageCropperModule,
+    NgImageSliderModule,
+     TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: translateHttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        }),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { LogoutComponent } from 'src/app/shared/components/logout/logout.component';
 
 @Component({
   selector: 'app-appdevelopmentconsole',
@@ -57,7 +59,6 @@ export class AppdevelopmentconsoleComponent implements OnInit {
 
 
   onSubmit(event: any) {
-    console.log("Ok"+event.submitter.namw);
     if (event.submitter.name == "AppForUser") {
       this.tabName = "AppForUser";
     } else if (event.submitter.name == "AppForGetsters") {
@@ -84,5 +85,6 @@ export class AppdevelopmentconsoleComponent implements OnInit {
     // return status != "FAIL" ? "green" : "red";
   }
   
+
 
 }

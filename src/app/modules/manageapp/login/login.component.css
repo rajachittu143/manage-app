@@ -68,6 +68,14 @@
         width: 100%;
         margin-right: 10px;
     }
+
+    .form-field-style {
+        margin-bottom: -1.25em !important;
+        font-size: 14px;
+        width: 100%;
+    }
+
+
 }
 
 @media only screen and (max-width: 360px) {
@@ -93,5 +101,11 @@
       .login-right-side-title{
         width: 100%;
         margin-right: 10px;
+    }
+
+    .form-field-style {
+        margin-bottom: -1.25em !important;
+        font-size: 14px;
+        width: 100%;
     }
 }

@@ -68,8 +68,19 @@
 }
 
 .lap-size{
-  height: 450px;
+  height: 364px;
   width: 500px;
+}
+
+@media only screen and (max-width: 360px) {
+
+  .img4{
+    position: absolute;
+    top: 18px;
+    left: 32px;
+    width: 264px;
+    height: 156px;
+  }
 }
 
 @media only screen and (max-width: 599px) {
@@ -77,6 +88,17 @@
   .lap-size{
     height: 254px;
     width: 340px;
+  }
+  .img4{
+    position: absolute;
+    top: 18px;
+    left: 32px;
+    width: 264px;
+    height: 156px;
+  }
+  .img5{
+    width: 266px;
+    height: 160px;
   }
 
 }
@@ -136,3 +158,34 @@
     }
   }
 }
+
+    .img1
+    {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+    .img2
+    {
+      position: absolute;
+      top: 48px;
+      left: 12px;
+      width: 201px;
+      height: 321px;
+    }
+
+
+    .img3
+    {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+    .img4
+    {
+      position: absolute;
+      top: 25px;
+      left: 46px;
+      width: 396px;
+      height: 231px;
+    }

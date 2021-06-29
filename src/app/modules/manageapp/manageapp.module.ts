@@ -40,8 +40,16 @@ import { AddNodeComponent, NewNodeDialog } from 'src/app/shared/components/maste
 import { EditNodeComponent, EditNodeDialog } from 'src/app/shared/components/master-category/edit-node/edit-node.component';
 import { DeleteNodeComponent } from 'src/app/shared/components/master-category/delete-node/delete-node.component';
 import { ReassignCategoryComponent } from './getster-category-admin/reassign-category/reassign-category.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReasonBusinessCategoryComponent } from './appdevelopmentconsole/appsforusers/businesscategories/reason-business-category/reason-business-category.component';
+import { ImageCropperModule } from 'ngx-image-cropper';
+import { BusinessCategoriesImageComponent } from './appdevelopmentconsole/launchscreenimages/business-categories-image/business-categories-image.component';
+import { GenericImageComponent } from './appdevelopmentconsole/launchscreenimages/generic-image/generic-image.component';
+import { NgImageSliderModule } from 'ng-image-slider';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { translateHttpLoaderFactory } from 'src/app/core/material.module';
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+
 
 @NgModule({
   entryComponents: [
@@ -86,9 +94,13 @@ import { ReasonBusinessCategoryComponent } from './appdevelopmentconsole/appsfor
     DeleteNodeComponent,
     ReassignCategoryComponent,
     ReasonBusinessCategoryComponent,
+    BusinessCategoriesImageComponent,
+    GenericImageComponent,
+    
     
   ],
   imports: [
+    NgxYoutubePlayerModule.forRoot(),
     ThemeModule,
     CommonModule,
     ManageappRoutingModule,
@@ -98,7 +110,16 @@ import { ReasonBusinessCategoryComponent } from './appdevelopmentconsole/appsfor
     FlexLayoutModule,
     MatSidenavModule,
     NgxIntlTelInputModule,
-    HttpClientModule
+    HttpClientModule,
+    ImageCropperModule,
+    NgImageSliderModule,
+     TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: translateHttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        })
   ],
   providers:[],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

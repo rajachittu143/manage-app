@@ -1,8 +1,9 @@
 <div style="text-align: start; margin-top: 20px;font-weight: 600;" class="primary-font-family">
-    Hi <span href="" style="color: blue; cursor: pointer;">First Name Last Name</span>, enter all the below listed credentials to be
+    Hi <span href="" style="color: blue; cursor: pointer;">First Name Last Name</span>, enter all the below listed
+    credentials to be
     permitted to login on approval by getbiz.app team:
 </div>
-<form [formGroup]="registrationForm" fxLayoutAlign="center center" (ngSubmit)="register()">
+<form [formGroup]="registrationForm" fxLayoutAlign="center center">
 
     <div fxLayout="row wrap" style="margin-top: 10px; width: 100%;" fxLayoutAlign="center center">
         <div class="form-field-width">
@@ -13,23 +14,16 @@
                 <img src="../../../../../assets/images/capture.png" alt="" style="height: 260px;width: 260px;">
             </div>
 
-            <div fxLayout="row wrap">
+            <!-- <div fxLayout="row wrap">
                 <div fxFlex="49" fxFlex.xs="100%" fxFlex.sm="25%" fxLayoutAlign="center center">
                     <ngx-intl-tel-input class="tel-margin" style="margin-top: 20px;" [cssClass]="'custom'" [preferredCountries]="preferredCountries"
                         [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true"
                         [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.All]"
                         [selectFirstCountry]="true" [selectedCountryISO]="CountryISO.India" type="number" maxLength="15"
                         [phoneValidation]="true" [separateDialCode]="separateDialCode"
-                        [numberFormat]="PhoneNumberFormat.National" name="phone" formControlName="phone">
+                        [numberFormat]="PhoneNumberFormat.National" name="phone" formControlName="phone" required>
                     </ngx-intl-tel-input>
-                    <!-- <mat-form-field appearance="outline" style="margin-top: 10px;"
-                        class="form-field-style primary-font-family"
-                        style="margin-top: 10px;margin-left: 10px; width: 100%;">
-                        <mat-label style="padding-left: -5px;">Enter Your Registered Mobile number *:</mat-label>
-                        <mat-icon matPrefix class="icon-prefix-padding">smartphone</mat-icon>
-                        <input matInput type="tel" class="input_style"
-                            placeholder="Enter Your Registered Mobile  number *:" />
-                    </mat-form-field> -->
+                 
                 </div>
                 <div fxFlex="10"></div>
                 <div fxFlex="41" fxFlex.xs="100" fxLayoutAlign="center center">
@@ -47,34 +41,53 @@
                         </mat-select>
                     </mat-form-field>
                 </div>
+            </div> -->
+
+            <ngx-intl-tel-input fxLayoutAlign="center center" class="tel-margin" style="margin-top: 20px;"
+                [cssClass]="'custom'" [preferredCountries]="preferredCountries" [enableAutoCountrySelect]="true"
+                [enablePlaceholder]="true" [searchCountryFlag]="true"
+                [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.All]" [selectFirstCountry]="true"
+                [selectedCountryISO]="CountryISO.India" type="number" maxLength="15" [phoneValidation]="true"
+                [separateDialCode]="separateDialCode" [numberFormat]="PhoneNumberFormat.National" name="phone"
+                formControlName="phone" required>
+            </ngx-intl-tel-input>
+
+            <div fxLayoutAlign="center center">
+                <mat-form-field appearance="outline" class="form-field-style primary-font-family" style="width: 57%;">
+                    <mat-label>Password</mat-label>
+                    <mat-icon matPrefix class="icon-prefix-padding">lock_outline</mat-icon>
+                    <input type="password" class="input_style" matInput placeholder="Password" value=""
+                        [type]="hide ? 'text' : 'password'" formControlName="password" required />
+                    <icon style="cursor: pointer;" mat-icon-button matSuffix (click)="hide = !hide">
+                        <mat-icon>{{ hide ? "visibility" : "visibility_off" }}</mat-icon>
+                    </icon>
+                    <mat-error *ngIf="registrationForm.controls['password'].hasError('required')">
+                        Password is required!
+                    </mat-error>
+                </mat-form-field>
             </div>
+            <div fxLayoutAlign="center center" style="margin-top: 10px;">
+                <mat-form-field appearance="outline" class="form-field-style primary-font-family"
+                    style="margin-top: 10px;width: 57%;">
+                    <mat-label>Reconfirm Password</mat-label>
+                    <mat-icon matPrefix class="icon-prefix-padding">lock_outline</mat-icon>
+                    <input type="password" class="input_style" matInput placeholder="Password" value=""
+                        [type]="hide ? 'text' : 'password'" formControlName="confirmPassword" required />
+                    <icon style="cursor: pointer;" mat-icon-button matSuffix (click)="hide = !hide">
+                        <mat-icon>{{ hide ? "visibility" : "visibility_off" }}</mat-icon>
+                    </icon>
+                    <mat-error *ngIf="registrationForm.controls['confirmPassword'].hasError('required')">
+                        ReConfirm password is required!
+                    </mat-error>
 
-            <mat-form-field appearance="outline" class="form-field-style primary-font-family"
-                style="width: 100%;">
-                <mat-label>Password</mat-label>
-                <mat-icon matPrefix class="icon-prefix-padding">lock_outline</mat-icon>
-                <input type="password" class="input_style" matInput placeholder="Password" value=""
-                    [type]="hide ? 'text' : 'password'" />
-                <icon style="cursor: pointer;" mat-icon-button matSuffix (click)="hide = !hide">
-                    <mat-icon>{{ hide ? "visibility" : "visibility_off" }}</mat-icon>
-                </icon>
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="form-field-style primary-font-family"
-                style="margin-top: 10px;width: 100%;">
-                <mat-label>Reconfirm Password</mat-label>
-                <mat-icon matPrefix class="icon-prefix-padding">lock_outline</mat-icon>
-                <input type="password" class="input_style" matInput placeholder="Password" value=""
-                    [type]="hide ? 'text' : 'password'" />
-                <icon style="cursor: pointer;" mat-icon-button matSuffix (click)="hide = !hide">
-                    <mat-icon>{{ hide ? "visibility" : "visibility_off" }}</mat-icon>
-                </icon>
-                <!-- <mat-error *ngIf="signinForm.controls['password'].hasError('required') && signinForm.controls['password'].touched">
-                            Password is required!
-                        </mat-error> -->
-            </mat-form-field>
-
+                    <mat-error *ngIf="registrationForm.controls['confirmPassword'].hasError('equalTo')">
+                        Password does not match!
+                    </mat-error>
+                </mat-form-field>
+            </div>
             <div style="margin-top: 20px; margin-bottom: 20px;" fxLayoutAlign="center center">
-                <button mat-flat-button class="register-btn primary-font-family">REGISTER</button>
+                <button [disabled]="registrationForm.invalid" mat-flat-button class="register-btn primary-font-family"
+                    (click)="registerGetster()">REGISTER</button>
             </div>
 
         </div>
